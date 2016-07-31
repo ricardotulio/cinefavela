@@ -1,0 +1,7 @@
+section.above-the-fold {
+	height: 80%;
+	background-image: url('../../images/background.jpg');
+	background-repeat: no-repeat;
+	background-clip: inherit;
+	background-position: center;
+}

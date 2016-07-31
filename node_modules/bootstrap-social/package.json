@@ -1,0 +1,46 @@
+{
+  "name": "bootstrap-social",
+  "version": "5.0.0",
+  "main": "bootstrap-social.css",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lipis/bootstrap-social.git"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap": "~3",
+    "font-awesome": "~4.6"
+  },
+  "gitHead": "90826fa078a9a13a679928a0439fc28cbe2706a6",
+  "description": "Social Buttons for Bootstrap ============================ [![npm version](https://badge.fury.io/js/bootstrap-social.svg)](https://badge.fury.io/js/bootstrap-social) [![Bower version](https://badge.fury.io/bo/bootstrap-social.svg)](https://badge.fury.io/bo",
+  "bugs": {
+    "url": "https://github.com/lipis/bootstrap-social/issues"
+  },
+  "homepage": "https://github.com/lipis/bootstrap-social#readme",
+  "_id": "bootstrap-social@5.0.0",
+  "scripts": {},
+  "_shasum": "8714d4237c9cf4777f3a976f1287955e850b78f3",
+  "_from": "bootstrap-social@latest",
+  "_npmVersion": "3.5.3",
+  "_nodeVersion": "5.3.0",
+  "_npmUser": {
+    "name": "lipis",
+    "email": "lipiridis@gmail.com"
+  },
+  "dist": {
+    "shasum": "8714d4237c9cf4777f3a976f1287955e850b78f3",
+    "tarball": "https://registry.npmjs.org/bootstrap-social/-/bootstrap-social-5.0.0.tgz"
+  },
+  "maintainers": [
+    {
+      "name": "lipis",
+      "email": "lipiridis@gmail.com"
+    }
+  ],
+  "_npmOperationalInternal": {
+    "host": "packages-16-east.internal.npmjs.com",
+    "tmp": "tmp/bootstrap-social-5.0.0.tgz_1461883693913_0.05473548755981028"
+  },
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/bootstrap-social/-/bootstrap-social-5.0.0.tgz"
+}
