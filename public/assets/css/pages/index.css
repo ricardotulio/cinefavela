@@ -12,3 +12,19 @@
 	position: absolute;
 }
 
+.highlights {
+	height: 70%;
+	width: 100%;
+	background-color: orange;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: .5em 0 .5em 0;
+}
+
+.highlight-box-1 {
+	height: 100%;
+	background-color: blue;
+	margin: 0;
+}
