@@ -1,7 +1,12 @@
-section.above-the-fold {
-	height: 80%;
-	background-image: url('../../images/background.jpg');
-	background-repeat: no-repeat;
-	background-clip: inherit;
-	background-position: center;
+.above-the-fold {
+	display: flex;
+	position: relative;
+	justify-content: center;
+	align-items: center;
+}
+
+.button-sign-in {
+	align-self: flex-end;
+	padding-bottom: .5em;
+	position: absolute;
 }
