@@ -23,8 +23,8 @@
 
 .highlight-box-1 {
 	height: 100%;
-    width: 100%;
-    background-color: blue;
+	width: 100%;
+	background-color: blue;
 }
 
 .blog {
@@ -77,14 +77,27 @@
 	flex-direction: row;
 	justify-content: center;
 	align-items: center;
-	padding: .5em;
+	padding: .2em;
 }
 
 .avatar-photo {
 	border-radius : 80%;
 	height: 100%;
 	width: 100%;
+	margin: 1em;
+	padding: .5em;
+	display: flex;
+	flex-direction: column;
 	background-color: #fff;
-	margin: 0 .5em;
-	padding: 0;
+}
+
+.support {
+	height: 100%;
+	width: 100%;
+	padding: .5em;
+}
+
+.support-img figure {
+	margin-bottom: .5em;
+	padding: .2em;
 }
