@@ -15,16 +15,76 @@
 .highlights {
 	height: 70%;
 	width: 100%;
-	background-color: orange;
+	background-color: red;
+	margin: 0;
+	padding: 1em;
 	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	padding: .5em 0 .5em 0;
 }
 
 .highlight-box-1 {
 	height: 100%;
+    width: 100%;
+    background-color: blue;
+}
+
+.blog {
+	height: 100%;
+	width: 100%;
+	background-color: green;
+	display: flex;
+	padding: .5em;
+	flex-direction: column;
+	justify-content: space-around;
+}
+
+.blog-content {
+	height: 40%;
+	width: 100%;
+	background-color: pink;
+	padding: .3em;
+	display: flex;
+	flex-direction: row;
+}
+
+.blog-image {
+	height: 100%;
+	width: 40%;
+	background-color: lightgray;
+}
+
+.blog-text {
+	height: 100%;
+	width: 60%;
+	background-color: yellow;
+	padding: .5em;
+}
+
+.participantes {
+	height: 100%;
+	width: 100%;
 	background-color: blue;
+	display: flex;
+	flex-direction: column;
+	padding: .5em;
+}
+
+.avatar {
+	height: 33.3%;
+	width: 100%;
+	background-color: lightgreen;
 	margin: 0;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	padding: .5em;
+}
+
+.avatar-photo {
+	border-radius : 80%;
+	height: 100%;
+	width: 100%;
+	background-color: #fff;
+	margin: 0 .5em;
+	padding: 0;
 }

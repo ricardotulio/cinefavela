@@ -1,81 +1,103 @@
-<section class="above-the-fold row">
-	<figure class="main-img">
-		<img src="../../public/assets/images/background.jpg" alt="main-image" class="img-responsive">
-	</figure>
-	<div class="button-sign-in">
-		<a href="#" class="btn btn-info btn-sm sign-in">Inscreva-se</a>
-	</div>
-</section>
+	<section class="above-the-fold row">
 
-<section class="about-us row">
-	<div class="col-xs-12">
-		<h2 class="text-center">O que é o Cine Favela?</h2>
-		<iframe width="100%" height="auto" src="https://www.youtube.com/embed/V7GMmJU8uOQ" frameborder="0" allowfullscreen></iframe>
-	</div>
-</section>
+		<figure class="main-img">
+			<img src="../../public/assets/images/background.jpg" alt="main-image" class="img-responsive">
+		</figure>
+		<div class="button-sign-in">
+			<a href="#" class="btn btn-info btn-sm sign-in">Inscreva-se</a>
+		</div>
+		
+	</section>
+	<section class="about-us row">
+		<div class="col-xs-12">
+			<h2 class="text-center">O que é o Cine Favela?</h2>
+			<iframe width="100%" height="auto" src="https://www.youtube.com/embed/V7GMmJU8uOQ" frameborder="0" allowfullscreen></iframe>
+		</div>
+	</section>
 
-<h2 class="text-center">Principais Atividades</h2>
-<section class="highlights col-xs-12">
+	<h4 class="text-center">Principais Atividades</h4>	
+	<section class="highlights row col-xs-12">
+		<div class="highlight-box-1">
+			TESTE
+		</div>
+	</section>
+	<hr>
+	<section class="highlights row col-xs-12">
+		<div class="highlight-box-1">
+			TESTE
+		</div>
+	</section>
+	<hr>
+	<section class="highlights row col-xs-12">
+		<div class="highlight-box-1">
+			TESTE
+		</div>
+	</section>
+
+		<!-- <section class="highlights row">
+			<div class="highlights-boxes col-xs-12">
+				<div id="highlight-box-1" class="highlight-box col-xs-12">
+				</div>
+				<div id="highlight-box-1" class="highlight-box col-xs-12">
+				</div>
+				<div id="highlight-box-1" class="highlight-box col-xs-12">		
+				</div>
+			</div>
+		</section> -->
 	
-	<div id="highlight-box-1" class="highlight-box-1 col-xs-10 col-xs-offset-1">
-		
-	</div>
-	<hr>
-</section>
+	<section class="blog">
+		<h4 class="text-center">Blog</h4>
 
-<section class="highlights col-xs-12">
-	<div id="highlight-box-1" class="highlight-box-1 col-xs-10 col-xs-offset-1">
-		
-	</div>
-	<hr>
-</section>
+		<div class="blog-content col-xs-6">
+			<div class="blog-image"></div>
+			<div class="blog-text">
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus nemo, esse, quos voluptatem vero nostrum tempora tenetur. <a href="#">Leia mais</a>
+				</p>
+			</div>
+		</div>
+		<div class="blog-content col-xs-6">
+			<div class="blog-image"></div>
+			<div class="blog-text">
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus nemo, esse, quos voluptatem vero nostrum tempora tenetur. <a href="#">Leia mais</a>
+				</p>
+			</div>
+		</div>
+	</section>
 
-<section class="highlights col-xs-12">
-	<div id="highlight-box-1" class="highlight-box-1 col-xs-10 col-xs-offset-1">
-		
-	</div>
-	<hr>
-</section>
 
-<!-- 
-<section class="highlights row">
-	<div class="highlights-boxes col-xs-12">
-		<div id="highlight-box-1" class="highlight-box col-xs-10 col-xs-offset-2">
+	<section class="participantes col-xs-12">
+		<h4 class="text-center">Participantes</h4>
+		<div class="avatar row">
+			<div class="avatar-photo col-xs-6"></div>
+			<div class="avatar-photo col-xs-6"></div>
+		</div><div class="avatar row">
+			<div class="avatar-photo col-xs-6"></div>
+			<div class="avatar-photo col-xs-6"></div>
 		</div>
-		<div id="highlight-box-1" class="highlight-box col-xs-12">
+		<div class="avatar row">
+			<div class="avatar-photo col-xs-6"></div>
+			<div class="avatar-photo col-xs-6"></div>
 		</div>
-		<div id="highlight-box-1" class="highlight-box col-xs-12">		
-		</div>
-	</div>
-</section> -->
+	</section>
 
-<section class="blog">
-	<div class="blog-title">
-		<h2 class="text-center">Blog<h2>	
-	</div>
+	<section class="contact row">
+		<form class="form col-xs-12">
+			<h2 class="text-center">Contato</h2>
+			<div class="form-group">
+				<label for="name">Nome: </label>
+				<input type="text" class="form-control" id="name" name="name" ng-model="contact.name" placeholder="Digite seu nome" required="">
+			</div>
+			<div class="form-group">
+				<label for="email">E-mail: </label>
+				<input type="email" class="form-control" id="email" name="email" ng-model="contact.email" placeholder="Digite seu email" required="">
+			</div>	
+			<div class="form-group">
+				<label for="message">Mensagem: </label>
+				<textarea rows="5" class="form-control" id="email" name="email" ng-model="contact.email" placeholder="Digite sua mensagem" required=""></textarea>
+			</div>
+			<div class="form-group">
+				<button class="btn btn-primary pull-right"><i class="fa fa-paper-plane" aria-hidden="true"></i> Enviar</button>
+			</div>
+		</form>
+	</section>
 
-	<div class="blog-content">
-		
-	</div>
-</section>
-
-<section class="contact row">
-	<form class="form col-xs-12">
-		<h2 class="text-center">Contato</h2>
-		<div class="form-group">
-			<label for="name">Nome: </label>
-			<input type="text" class="form-control" id="name" name="name" ng-model="contact.name" placeholder="Digite seu nome" required="">
-		</div>
-		<div class="form-group">
-			<label for="email">E-mail: </label>
-			<input type="email" class="form-control" id="email" name="email" ng-model="contact.email" placeholder="Digite seu email" required="">
-		</div>	
-		<div class="form-group">
-			<label for="message">Mensagem: </label>
-			<textarea rows="5" class="form-control" id="email" name="email" ng-model="contact.email" placeholder="Digite sua mensagem" required=""></textarea>
-		</div>
-		<div class="form-group">
-			<button class="btn btn-primary pull-right"><i class="fa fa-paper-plane" aria-hidden="true"></i> Enviar</button>
-		</div>
-	</form>
-</section>
