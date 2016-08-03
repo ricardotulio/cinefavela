@@ -23,6 +23,6 @@ class RelationalSessaoRepository implements SessaoRepository
 
     public function get($id)
     {
-        return $this->mapper->sessao[$id]->fetch();
+        return $this->mapper->sessao[$id]->usuario->fetch();
     }
 }

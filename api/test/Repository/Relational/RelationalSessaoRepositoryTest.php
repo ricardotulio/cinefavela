@@ -54,5 +54,8 @@ class RelationalSessaoRepositoryTest extends RelationalRepositoryTestCase
         $this->assertEquals($sessao->getId(), $sessaoNoBanco->getId());
         $this->assertEquals($sessao->getDataHoraInicio(), $sessaoNoBanco->getDataHoraInicio());
         $this->assertEquals($sessao->getDataHoraFim(), $sessaoNoBanco->getDataHoraFim());
+        $this->assertInstanceOf("CineFavela\Model\Usuario", $sessaoNoBanco->getUsuario());
+        
+        return $sessaoNoBanco;
     }
 }

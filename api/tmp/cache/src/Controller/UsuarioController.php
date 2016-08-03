@@ -6,7 +6,7 @@ use CineFavela\Repository\UsuarioRepository;
 use CineFavela\Validation\ValidatorInterface;
 use Respect\Rest\Routable;
 
-final class UsuarioController extends AbstractController implements Routable
+class UsuarioController__AopProxied extends AbstractController implements Routable
 {
 
     private $repository;
@@ -60,3 +60,6 @@ final class UsuarioController extends AbstractController implements Routable
     public function delete($id)
     {}
 }
+
+include_once AOP_CACHE_DIR . '/_proxies/src/Controller/UsuarioController.php';
+

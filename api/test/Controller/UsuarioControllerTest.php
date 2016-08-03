@@ -75,7 +75,7 @@ class UsuarioControllerTest extends TestCase
      * @test
      * @dataProvider provider
      */
-    public function testaSeRetornaErro400ComDadosDeUsuarioInvalidos($nome, $email, $senha)
+    public function testaSeRetornaErro400QuandoDadosDeUsuarioInvalidos($nome, $email, $senha)
     {
         $usuario = new \stdClass();
         $usuario->nome = $nome;
@@ -85,7 +85,7 @@ class UsuarioControllerTest extends TestCase
         $res = null;
         
         try {
-            $res = $this->client->post("http://localhost:8080/api/public/v1/usuarios/", [
+            $this->client->post("http://localhost:8080/api/public/v1/usuarios/", [
                 "json" => $usuario,
                 "headers" => [
                     "Accept" => "application/json",

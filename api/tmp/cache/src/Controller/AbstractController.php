@@ -1,7 +1,7 @@
 <?php
 namespace CineFavela\Controller;
 
-abstract class AbstractController
+abstract class AbstractController__AopProxied
 {
 
     public function __get($attribute)
@@ -18,3 +18,6 @@ abstract class AbstractController
         }
     }
 }
+
+include_once AOP_CACHE_DIR . '/_proxies/src/Controller/AbstractController.php';
+

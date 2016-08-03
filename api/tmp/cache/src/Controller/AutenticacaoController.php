@@ -6,7 +6,7 @@ use CineFavela\Repository\UsuarioRepository;
 use CineFavela\Model\Sessao;
 use CineFavela\Repository\SessaoRepository;
 
-class AutenticacaoController extends AbstractController implements Routable
+class AutenticacaoController__AopProxied extends AbstractController implements Routable
 {
 
     private $usuarioRepository;
@@ -48,3 +48,6 @@ class AutenticacaoController extends AbstractController implements Routable
         );
     }
 }
+
+include_once AOP_CACHE_DIR . '/_proxies/src/Controller/AutenticacaoController.php';
+

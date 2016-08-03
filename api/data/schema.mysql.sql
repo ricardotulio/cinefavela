@@ -21,7 +21,7 @@ CREATE TABLE IF NOT EXISTS filme (
 	id INTEGER NOT NULL auto_increment,
 	usuario_id INTEGER NOT NULL,
 	titulo VARCHAR(120) NOT NULL,
-	descricao TEXT,
+	sinopse TEXT NOT NULL,
 	linkYoutube VARCHAR(1024) NOT NULL,
 	criadoEm DATETIME NOT NULL,
 	atualizadoEm DATETIME DEFAULT NULL,

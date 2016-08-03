@@ -15,15 +15,25 @@ if (defined('APPLICATION_ENVIRONMENT')) {
     }
 }
 
+use CineFavela\Aspect\ApplicationAspectKernel;
 use Respect\Config\Container;
 use Respect\Rest\Router;
-use Symfony\Component\Serializer\Serializer;
 use Symfony\Component\Serializer\Encoder\JsonEncoder;
 use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
+use Symfony\Component\Serializer\Serializer;
 
 require_once ("../vendor/autoload.php");
 
 $container = new Container("../config/" . APPLICATION_ENVIRONMENT . ".ini");
+
+$applicationAspectKernel = ApplicationAspectKernel::getInstance();
+$applicationAspectKernel->init(array(
+    'debug' => true,
+    'cacheDir' => __DIR__ . '/../tmp/cache',
+    'includePaths' => array(
+        __DIR__
+    )
+));
 
 $encoders = array(
     new JsonEncoder()
@@ -49,6 +59,12 @@ $router->any("/v1/usuarios/*", "CineFavela\\Controller\\UsuarioController", arra
 $router->post("/v1/autenticacao", "CineFavela\\Controller\\AutenticacaoController", array(
     $container->usuarioRepository,
     $container->sessaoRepository
+));
+
+$router->any("/v1/filmes/*", "CineFavela\\Controller\\FilmeController", array(
+    $container->filmeValidator,
+    $container->sessaoRepository,
+    $container->filmeRepository
 ));
 
 echo $router->run();

@@ -28,7 +28,12 @@ class Sessao
 
     public function setUsuario(Usuario $usuario)
     {
-        $this->usuario_id = $usuario->getId();
+        $this->usuario_id = $usuario;
+    }
+
+    public function getUsuario()
+    {
+        return $this->usuario_id;
     }
 
     public function getDataHoraInicio()
@@ -40,8 +45,9 @@ class Sessao
     {
         $this->dataHoraInicio = $dataHoraInicio;
     }
-    
-    public function getDataHoraFim() {
+
+    public function getDataHoraFim()
+    {
         return $this->dataHoraFim;
     }
 
