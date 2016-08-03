@@ -4,15 +4,56 @@ namespace CineFavela\Controller;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\RequestException;
 use PHPUnit\Framework\TestCase;
+use function GuzzleHttp\json_decode;
 
 class FilmeControllerTest extends TestCase
 {
 
     private $client;
 
+    private static $token_acesso;
+    
+    /**
+     * @beforeClass
+     */
+    public static function beforeClass() {
+        $client = new Client();
+        
+        $usuario = new \stdClass();
+        $usuario->nome = "Ricardo Tulio";
+        $usuario->email = "abcdefghijklm@gmail.com";
+        $usuario->senha = "abc123";
+        
+        // Cria usuário antes de autenticá-lo
+        $client->post("http://localhost:8080/api/public/v1/usuarios", [
+            "json" => $usuario,
+            "headers" => [
+                "Accept" => "application/json",
+                "Content-Type" => "application/json",
+                "Pragma" => "no-cache"
+            ]
+        ]);
+        
+        $res = $client->post("http://localhost:8080/api/public/v1/autenticacao", [
+            "json" => $usuario,
+            "headers" => [
+                "Accept" => "application/json",
+                "Content-Type" => "application/json",
+                "Pragma" => "no-cache"
+            ]
+        ]);
+        
+        $body = $res->getBody();
+        $responseObj = json_decode($body->getContents());
+        
+        self::$token_acesso = $responseObj->data->token_acesso;
+    }
+
     public function setUp()
     {
         $this->client = new Client();
+        
+
     }
 
     public function provider()
@@ -115,7 +156,8 @@ class FilmeControllerTest extends TestCase
                 "headers" => [
                     "Accept" => "application/json",
                     "Content-Type" => "application/json",
-                    "Pragma" => "no-cache"
+                    "Pragma" => "no-cache",
+                    "Authorization" => self::$token_acesso
                 ]
             ]);
         } catch (RequestException $e) {
@@ -135,32 +177,7 @@ class FilmeControllerTest extends TestCase
      * @test
      */
     public function testaSeCadastraFilme()
-    {
-        $usuarioQueVaiCadastrarOFilme = new \stdClass();
-        $usuarioQueVaiCadastrarOFilme->nome = "Novo Usuario Cadastrador";
-        $usuarioQueVaiCadastrarOFilme->email = "cadastrador@teste.com.br";
-        $usuarioQueVaiCadastrarOFilme->senha = "123456";
-        
-        $this->client->post("http://localhost:8080/api/public/v1/usuarios/", [
-            "json" => $usuarioQueVaiCadastrarOFilme,
-            "headers" => [
-                "Accept" => "application/json",
-                "Content-Type" => "application/json",
-                "Pragma" => "no-cache"
-            ]
-        ]);
-        
-        $resAuth = $this->client->post("http://localhost:8080/api/public/v1/autenticacao/", [
-            "json" => $usuarioQueVaiCadastrarOFilme,
-            "headers" => [
-                "Accept" => "application/json",
-                "Content-Type" => "application/json",
-                "Pragma" => "no-cache"
-            ]
-        ]);
-        
-        $auth = json_decode($resAuth->getBody()->getContents());
-        
+    {       
         $filme = new \stdClass();
         $filme->titulo = "Filme do João";
         $filme->sinopse = "Este filme conta a história de um homem que vivia fazendo testes automatizados para facilitar o seu trabalho como programador. É o programador coisado.";
@@ -172,7 +189,7 @@ class FilmeControllerTest extends TestCase
                 "Accept" => "application/json",
                 "Content-Type" => "application/json",
                 "Pragma" => "no-cache",
-                "Authorization" => $auth->data->token_acesso
+                "Authorization" => self::$token_acesso
             ]
         ]);
         

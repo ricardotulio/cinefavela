@@ -136,28 +136,4 @@ class UsuarioControllerTest extends TestCase
         
         return $responseObject->data;
     }
-
-    /**
-     * @test
-     * @depends testaSeCadastraUsuario
-     */
-    public function testaSeObtemUsuarioPorId($usuario)
-    {
-        $res = $this->client->get('http://localhost:8080/api/public/v1/usuarios/' . $usuario->id, [
-            "headers" => [
-                "Accept" => "application/json",
-                "Content-Type" => "application/json",
-                "Pragma" => "no-cache"
-            ]
-        ]);
-        
-        $body = $res->getBody()->getContents();
-        $responseObject = json_decode($body);
-        
-        $this->assertEquals(200, $res->getStatusCode());
-        $this->assertEquals($usuario->id, $responseObject->data->id);
-        $this->assertEquals($usuario->nome, $responseObject->data->nome);
-        $this->assertEquals($usuario->email, $responseObject->data->email);
-        $this->assertEquals($usuario->senha, $responseObject->data->senha);
-    }
 }
