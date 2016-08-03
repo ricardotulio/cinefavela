@@ -9,7 +9,7 @@ CREATE TABLE usuario (
 
 CREATE TABLE sessao (
 	id INTEGER PRIMARY KEY,
-	usuario_id INTEGER NOT NULL
+	usuario_id INTEGER NOT NULL,
 	dataHoraInicio TIMESTAMP NOT NULL,
 	dataHoraFim TIMESTAMP NOT NULL,
 	tokenAcesso VARCHAR(40) NOT NULL,

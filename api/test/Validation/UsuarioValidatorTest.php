@@ -1,14 +1,13 @@
 <?php
 namespace CineFavela\Validation;
 
-use PHPUnit\Framework\TestCase;
 use CineFavela\Model\Usuario;
+use PHPUnit\Framework\TestCase;
 
 class UsuarioValidatorTest extends TestCase
 {
-
-    public function provider()
-    {
+    
+    public function provider() {
         return array(
             array(
                 null,
@@ -87,7 +86,7 @@ class UsuarioValidatorTest extends TestCase
                 "ricardo.tulio@fatec.sp.gov.br",
                 "01234567890123456789",
                 true
-            )            
+            )
         );
     }
     
@@ -95,7 +94,7 @@ class UsuarioValidatorTest extends TestCase
      * @test
      * @dataProvider provider
      */
-    public function testaSeValidaUsuario($nome, $email, $senha, $resultadoEsperado) {
+    public function testaSeValidaUsuario($nome, $email, $senha, $resultadoEsperado) {        
         $usuario = new \stdClass();
         $usuario->nome = $nome;
         $usuario->email = $email;

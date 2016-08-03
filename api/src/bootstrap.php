@@ -37,15 +37,18 @@ $router = new Router("/api/public");
 
 $router->always("Accept", array(
     "application/json" => function ($input) use ($serializer) {
-        return $serializer->serialize(array(
-            "data" => $input
-        ), "json");
+        return $serializer->serialize($input, "json");
     }
 ));
 
 $router->any("/v1/usuarios/*", "CineFavela\\Controller\\UsuarioController", array(
     $container->usuarioValidator,
     $container->usuarioRepository
+));
+
+$router->post("/v1/autenticacao", "CineFavela\\Controller\\AutenticacaoController", array(
+    $container->usuarioRepository,
+    $container->sessaoRepository
 ));
 
 echo $router->run();

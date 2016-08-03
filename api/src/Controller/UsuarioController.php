@@ -21,7 +21,9 @@ final class UsuarioController extends AbstractController implements Routable
 
     public function get($id = null)
     {
-        return $this->repository->get($id);
+        return array(
+            "data" => $this->repository->get($id)
+        );
     }
 
     public function post()
@@ -34,7 +36,19 @@ final class UsuarioController extends AbstractController implements Routable
             
             $this->repository->persist($usuario);
             
-            return $usuario;
+            return array(
+                "data" => $usuario
+            );
+        } else {
+            header("HTTP/1.1 400 Bad Request");
+            return array(
+                "errors" => array(
+                    array(
+                        "code" => 400,
+                        "message" => "Os dados informados para cadastro de usuário são inválidos."
+                    )
+                )
+            );
         }
     }
 
