@@ -18,38 +18,37 @@
     <link rel="stylesheet" type="text/css" href="public/assets/css/pages/index.css">
 </head>
 <body>
-    <nav class="navbar navbar-default navbar-fixed-top" role="navegation"> 
+ <div class="navbar navbar-default navbar-fixed-top">
     <div class="container">
-        <button class="navbar-toggle" data-toggle="collapse" data-target=".nav-header-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-        </button>
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-ex-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#"><span>Brand</span></a>
+  </div>
+  <div class="collapse navbar-collapse" id="navbar-ex-collapse">
+    <ul class="nav navbar-nav navbar-right">
+      <li class="active">
+        <a href="#">Home</a>
+    </li>
+    <li>
+        <a href="#">Contacts</a>
+    </li>
+</ul>
+</div>
+</div>
+</div>
 
-        <div class="collapse navbar-collapse nav-header-collapse">
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-                   <a href="#">TESTANDO</a> 
-                </li>
-                <li>
-                   <a href="#">TESTANDO</a> 
-                </li>
-                <li>
-                   <a href="#">TESTANDO</a> 
-                </li>
-                <li>
-                   <a href="#">TESTANDO</a> 
-                </li>
-            </ul>
-        </div>
+
+<main class="container">
+    <div class="content row">
+        <div class="col-xs-12" ng-view>
+        </div>           
     </div>
-    </nav>
-    <main class="container">
-        <div class="content row">
-            <div class="col-xs-12" ng-view>
-            </div>           
-        </div>
-    </main>
+</main>
     <!--
     <footer class="footer-container row">
         <div class="footer-content col-xs-12">
@@ -71,12 +70,12 @@
             </div>
         </div>
     </footer> 
-    --> 
-    <script src="node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="node_modules/angular/angular.min.js"></script>
-    <script src="node_modules/angular-route/angular-route.min.js"></script>
-    <script src="src/main.js"></script>
-    <script src="src/scripts/controllers/index.controller.js"></script>
-    <script src="src/scripts/routes.js"></script>
+--> 
+<script src="node_modules/jquery/dist/jquery.min.js"></script>
+<script src="node_modules/angular/angular.min.js"></script>
+<script src="node_modules/angular-route/angular-route.min.js"></script>
+<script src="src/main.js"></script>
+<script src="src/scripts/controllers/index.controller.js"></script>
+<script src="src/scripts/routes.js"></script>
 </body>
 </html>
