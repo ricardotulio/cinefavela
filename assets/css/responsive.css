@@ -1,0 +1,20 @@
+@media screen and (orientation: landscape and max-width: 1024px) {
+	.above-the-fold {
+		height: 120%;
+	}
+
+	.highlight-boxes {
+		padding: 0px 10%;
+	}
+
+	.experiences {
+		height: 140%;
+	}
+}
+
+
+@media screen and (min-width: 720px) {
+	.experiences {
+		height: 60%;
+	}
+}
