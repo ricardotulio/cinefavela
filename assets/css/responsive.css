@@ -17,4 +17,27 @@
 	.experiences {
 		height: 60%;
 	}
+
+	._members {
+		display: flex;
+		flex-direction: row;
+	}
+}
+
+@media screen and (min-width: 500px) {
+	.experiences {
+		height: 60%;
+	}
+
+	._members {
+		 padding: .5em;
+    flex-wrap: wrap;
+    justify-content: space-between;
+	}
+
+	.member-photo {
+		padding: .5em 1em;
+		width: auto;
+		margin: 0 0 .5em 0;
+	}
 }

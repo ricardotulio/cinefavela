@@ -14,6 +14,7 @@ body {
 
 .content {
 	height: 70%;
+
 }
 
 .footer {
@@ -32,6 +33,9 @@ body {
 
 .above-the-fold-content {
 	height: 100%;
+	background-image: url('/assets/media/foto-cine.jpg');
+	background-repeat: no-repeat;
+	background-size: 100%;
 }
 
 .above-the-fold-content p {
@@ -73,10 +77,6 @@ body {
 	padding-bottom: 1em;
 }
 
-.navbar-default{
-	background-color: #ff8080;
-}
-
 .share-experiences {
 	height: 25%;
 }
@@ -110,6 +110,7 @@ body {
 	align-content: center;
 	justify-content: center;		
 	height: 50%;
+	color: #fff;
 }
 
 .footer {
@@ -129,4 +130,39 @@ body {
 
 .footer p {
 	text-align: center;
+}
+
+.members {
+	margin: 0;
+	padding: .5em;
+	border: solid 1px black;
+	height: auto;
+	display: flex;
+	flex-direction: column;
+}
+
+._members {
+border: solid 1px black;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.member-avatar {
+	height: 250px;
+	width: 250px;
+	border: solid 1px black;
+	margin: 0 0 .5em 0;
+	display: flex;
+	flex-direction: column;
+}
+
+.member-photo {
+	width: auto;
+	margin: 0 .3em;
+}
+.member-photo img{
+	border-radius: 100%;
+	border: 1px solid black;
 }
