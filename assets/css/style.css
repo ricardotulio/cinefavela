@@ -10,11 +10,41 @@ body {
 .main {
 	width: 100%;
 	height: 100%;
+	overflow-x: hidden;
+}
+
+.header-title {
+	color: black;
+}
+
+.header {
+	height: calc(90% - 150px);
+	border: 1px solid black;
+}
+
+.header-content {
+    height: 100%;
+	background-image: url('/assets/media/home.jpg');
+	background-repeat: no-repeat;
+	background-size: 100% 110%;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.sign-in {
+	align-self: flex-end;
+	margin: 0 0 1em 0;
+}
+
+.header-container {
+  height: 100%;	
+  width: 100%;
 }
 
 .content {
 	height: 70%;
-
 }
 
 .footer {
@@ -27,13 +57,13 @@ body {
 
 .above-the-fold {
 	height: 100%;
-	background-color: yellow;
+	background-color: lightgray;
 
 }
 
 .above-the-fold-content {
 	height: 100%;
-	background-image: url('/assets/media/foto-cine.jpg');
+	background-image: url('/assets/media/home.jpg');
 	background-repeat: no-repeat;
 	background-size: 100%;
 }
@@ -54,16 +84,38 @@ body {
 	height: auto;
 }
 
+.highlights {
+	height: auto;
+}
+
 .highlight-box {
 	padding: 1em;
+	position: relative;
 }
 
 .highlight-box-content {
-	height: 0px;
+	height: 0;
 	padding-top: 100%;
-	background-color: blue;
+	display: flex;
 }
 
+.img-1 {
+	background-image: url('../media/esporte.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+} 
+
+.img-2 {
+	background-image: url('../media/multimidia2.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.img-3 {
+	background-image: url('../media/teatro.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
 .experiences {
 	height: 100%;
 }
@@ -135,14 +187,13 @@ body {
 .members {
 	margin: 0;
 	padding: .5em;
-	border: solid 1px black;
 	height: auto;
 	display: flex;
 	flex-direction: column;
 }
 
 ._members {
-border: solid 1px black;
+    border: solid 1px black;
     height: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -152,8 +203,7 @@ border: solid 1px black;
 .member-avatar {
 	height: 250px;
 	width: 250px;
-	border: solid 1px black;
-	margin: 0 0 .5em 0;
+	margin: .8em 0;
 	display: flex;
 	flex-direction: column;
 }
@@ -166,3 +216,9 @@ border: solid 1px black;
 	border-radius: 100%;
 	border: 1px solid black;
 }
+
+.about-project-content {
+	display: flex;
+
+}
+
