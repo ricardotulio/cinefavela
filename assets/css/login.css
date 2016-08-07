@@ -1,0 +1,48 @@
+html, body {
+	width: 100%;
+	height: 100%;	
+}
+
+.container {
+	height: 100%;
+	width: 100%;
+	padding: 1em;
+}
+
+.flex-center {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+}
+
+.form-login {
+	height: auto;
+	width: auto;
+}
+
+.form-input {
+	margin-bottom: 0;
+}
+
+.form-check {
+	display: flex;
+	flex-direction: column;
+}
+
+.btn-sign-in {
+	margin: 0 0 .5em 0;	
+}
+
+.img-logo {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.logo img {
+	height: 180px;
+}
+
+.social-media a{
+	margin: 0 1em 0 0 ;
+}
