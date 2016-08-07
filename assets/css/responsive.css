@@ -32,9 +32,26 @@
 	}
 
 	.sign-in {
-	align-self: flex-end;
-	margin: 0 0 6em 0;
-}
+		align-self: flex-end;
+		margin: 0 0 6em 0;
+	}
+
+	.partners {
+		height: auto;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.partners figure {
+		margin: 0 .5em;
+	}
+
+	.partners img {
+		height: 80px;
+		width: 100px;
+	}
 }
 
 @media screen and (min-width: 500px) {
