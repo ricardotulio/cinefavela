@@ -7,19 +7,32 @@ body {
 	padding-top: 50px;
 }
 
+.flex-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
 .main {
 	width: 100%;
 	height: 100%;
 	overflow-x: hidden;
 }
 
+.logo-cine img{
+	height: 50px;
+	width: 90px;
+}
+
+.navbar-cine {
+	background-color: #fff;
+}
 .header-title {
 	color: black;
 }
 
 .header {
 	height: calc(90% - 150px);
-	border: 1px solid black;
 }
 
 .header-content {
@@ -52,6 +65,9 @@ body {
 	height: 30%;
 }
 
+.video {
+	margin: 0 1em;
+}
 .section-title {
 	text-align: center;
 }
@@ -170,7 +186,7 @@ body {
 	height: auto;
 	padding: 1em 3em;
 	align-items: center;
-	background-color: blue;
+	background-color: #9C9B98;
 	color: #fff;
 	flex-direction: column;
 }
@@ -222,7 +238,7 @@ body {
 
 }
 
-.newfooter {
+.support-section {
 	height: auto;
 	padding: 1em 3em;
 	align-items: center;
@@ -237,6 +253,27 @@ body {
 
 .partners figure {
 	margin: 0 0 .5em 0;
+	height: auto;
+	width: auto;
 }
 
+.partners img {
+	height: 200px;
+	width: 200px;
+}
 
+.youtube {
+	color: #bb0000;
+}
+
+.facebook {
+	color: #3b5998;
+}
+
+.twitter {
+	color: #55acee;
+}
+
+.instagram {
+	color: #517fa4;
+}
