@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Cadastro de Filme</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Bootstrap -->
+	<link rel="stylesheet"
+	href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+
+	<!-- Font Awesome -->
+	<link rel="stylesheet"
+	href="node_modules/font-awesome/css/font-awesome.css">
+
+</head>
+<body>
+	<div class="container  ">
+		<div class="row">
+			<div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-4 formulario-acesso">
+				<h3>Cadastro de Filme</h3>
+				<form role="form" class="form-movie-content">
+					<div class="form-group form-input">
+
+					<div class="form-group has-feedback">
+					    <label class="control-label">Titulo</label>
+					    <input type="text" class="form-control" placeholder="Titulo" />
+					    <i class="glyphicon glyphicon-check form-control-feedback"></i>
+					</div>
+
+					<div class="form-group has-feedback">
+					    <label class="control-label">Filme</label>
+					    <input type="text" class="form-control" placeholder="Informe a URL do filme no Youtube" />
+					    <i class="fa fa-youtube form-control-feedback"></i>
+					</div>
+
+					<div class="form-group has-feedback">
+					    <label class="control-label">Integrantes</label>
+					    <input type="text" class="form-control" placeholder="Integrantes do Projeto" />
+					    <i class="glyphicon glyphicon-user form-control-feedback"></i>
+					</div>
+
+						<label class="control-label _label" for="genero">Genero</label>
+						<select name="genre" form="genreform">
+							<option value="Documentario">Documentario</option>
+							<option value="Drama">Drama</option>
+							<option value="Infantil">Infantil</option>
+							<option value="Terror">Terror</option>
+						</select>
+						
+						<div class="form-group">
+							<label for="descricao">Descricao</label>
+							<textarea class="form-control" rows="5" id="descricao"></textarea>
+						</div>
+					</div>
+
+					<div class="buttons">
+						<button class="btn btn-success btn-sm btn-sign-in"><i class="fa fa-paper-plane-o" aria-hidden="true"></i>  Enviar</button>
+						<button class="btn btn-danger btn-sm btn-sign-in"><i class="fa fa-ban" aria-hidden="true"></i> Cancelar</button>
+					</div> 
+
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+
+<style>
+	.container h3 {
+		margin-top: 8px;
+	}
+
+	.fa-youtube {
+		margin: .8em 0;
+	}
+</style>
