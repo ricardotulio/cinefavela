@@ -15,18 +15,22 @@ html, body {
 	justify-content: center;
 }
 
-.form-login {
-	height: auto;
-	width: auto;
-}
-
 .form-input {
 	margin-bottom: 0;
+	height: 20%;
+}
+
+.input {
+	height: 30px;
 }
 
 .form-check {
 	display: flex;
 	flex-direction: column;
+}
+
+.remember-password {
+	margin: .5em 0;
 }
 
 .btn-sign-in {
@@ -46,3 +50,62 @@ html, body {
 .social-media a{
 	margin: 0 1em 0 0 ;
 }
+
+.facebook {
+	color: #3b5998;
+}
+
+.twitter {
+	color: #55acee;
+}
+
+.instagram {
+	color: #517fa4;
+}
+
+.google-plus {
+	color: #d34836;
+}
+
+@media only screen 
+  and (orientation: landscape) {
+	.container {
+		padding: 1em 2em;
+	}
+
+	.form-input {
+	margin-bottom: 0;
+	height: 98px;
+	}
+
+	.img-logo {
+		height: 40px;
+	}
+
+	.logo img {
+	height: 80px;
+    width: 40%;
+	}
+
+	.input {
+		margin-bottom: -12px;
+	}
+
+	.formulario-acesso {
+		margin: 0;
+	}
+}
+
+/* Extra Small Devices, .visible-xs-* */
+@media (max-width: 767px) {}
+
+/* Small Devices, .visible-sm-* */
+@media (min-width: 768px) and (max-width: 991px) {}
+
+/* Medium Devices, .visible-md-* */
+@media (min-width: 992px) and (max-width: 1199px) {}
+
+/* Large Devices, .visible-lg-* */
+@media (min-width: 1200px) {}
+
+
