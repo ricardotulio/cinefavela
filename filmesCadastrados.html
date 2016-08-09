@@ -4,149 +4,36 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<!-- Bootstrap -->
-	<link rel="stylesheet"
-	href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="node_modules/materialize-css/dist/css/materialize.css">
+
 
 	<!-- Font Awesome -->
 	<link rel="stylesheet"
 	href="node_modules/font-awesome/css/font-awesome.css">
 
 	<link rel="stylesheet" href="assets/css/filmescadastrados.css">
+
+
+	<script src="node_modules/jquery/dist/jquery.js"></script>
+	<script src="node_modules/materialize-css/js/materialize.js"></script>
+	<script src="node_modules/materialize-css/js/velocity.min.js"></script>
+	<script src="node_modules/materialize-css/js/leanModal.js"></script>
 </head>
 
 <body>
-
-	<nav class="navbar navbar-default navbar-fixed-top">
-		<div class="container">
-			<!-- Brand and toggle get grouped for better mobile display -->
-			<div class="navbar-header navbar-cine">
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-			</div>
-
-			<!-- Collect the nav links, forms, and other content for toggling -->
-			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-				<ul class="nav navbar-nav navbar-right">
-					<li><a href="#">Festival</a></li>
-					<li><a href="#">Cursos</a></li>
-					<li><a href="#">Eventos</a></li>
-					<li><a href="#">Noticias</a></li>
+	<div class="navbar-fixed">
+		<nav>
+			<div class="nav-wrapper">
+				<a href="#!" class="brand-logo">Logo</a>
+				<ul class="right hide-on-med-and-down">
+					<li><a href="sass.html">Sass</a></li>
+					<li><a href="badges.html">Components</a></li>
 				</ul>
-			</div><!-- /.navbar-collapse -->
-		</div><!-- /.container-fluid -->
-	</nav>
+			</div>
+		</nav>
+	</div>
 	<div id="wrapper">
 		<div id="columns">
-			<div class="avatar">
-				<div class="photo">
-					<figure>
-						<img src="assets/media/avatar.png" alt="imagem-avatar" class="img-responsive">
-					</figure>
-				</div>
-				<div class="member-name">
-					<h4>Xablau Monstrao</h4>			
-				</div>
-			</div>
-			<div class="pin">
-				<img src="http://cssdeck.com/uploads/media/items/2/2v3VhAp.png" />
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-					Sed feugiat consectetur pellentesque. Nam ac elit risus, 
-					ac blandit dui. Duis rutrum porta tortor ut convallis.
-					Duis rutrum porta tortor ut convallis.
-				</p>
-			</div>
-
-			<div class="pin">
-				<img src="http://cssdeck.com/uploads/media/items/1/1swi3Qy.png" />
-				<p>
-					Donec a fermentum nisi. 
-				</p>
-			</div>
-
-			<div class="pin">
-				<img src="http://cssdeck.com/uploads/media/items/6/6f3nXse.png" />
-				<p>
-					Nullam eget lectus augue. Donec eu sem sit amet ligula 
-					faucibus suscipit. Suspendisse rutrum turpis quis nunc 
-					convallis quis aliquam mauris suscipit.
-				</p>
-			</div>
-
-			<div class="pin">
-				<img src="http://cssdeck.com/uploads/media/items/8/8kEc1hS.png" />
-				<p>
-					Nullam eget lectus augue. Donec eu sem sit amet ligula 
-					faucibus suscipit. Suspendisse rutrum turpis quis nunc 
-					convallis quis aliquam mauris suscipit.
-				</p>
-			</div>
-
-			<div class="pin">
-				<img src="http://cssdeck.com/uploads/media/items/1/1swi3Qy.png" />
-				<p>
-					Donec a fermentum nisi. Integer dolor est, commodo ut 
-					sagittis vitae, egestas at augue. 
-				</p>
-			</div>
-
-			<div class="pin">
-				<img src="http://cssdeck.com/uploads/media/items/6/6f3nXse.png" />
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-					Sed feugiat consectetur pellentesque. Nam ac elit risus, 
-					ac blandit dui. Duis rutrum porta tortor ut convallis.
-					Duis rutrum porta tortor ut convallis.
-				</p>
-			</div>	
-
-			<div class="pin">
-				<img src="http://cssdeck.com/uploads/media/items/2/2v3VhAp.png" />
-				<p>
-					Nullam eget lectus augue. Donec eu sem sit amet ligula 
-					faucibus suscipit. Suspendisse rutrum turpis quis nunc 
-					convallis quis aliquam mauris suscipit.
-					Duis rutrum porta tortor ut convallis.
-				</p>
-			</div>
-
-			<div class="pin">
-				<img src="http://cssdeck.com/uploads/media/items/1/1swi3Qy.png" />
-				<p>
-					Nullam eget lectus augue. 
-				</p>
-			</div>
-
-			<div class="pin">
-				<img src="http://cssdeck.com/uploads/media/items/8/8kEc1hS.png" />
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-					Sed feugiat consectetur pellentesque. 
-				</p>
-			</div>
-
-			<div class="pin">
-				<img src="http://cssdeck.com/uploads/media/items/2/2v3VhAp.png" />
-				<p>
-					Donec a fermentum nisi. Integer dolor est, commodo ut 
-					sagittis vitae, egestas at augue. Suspendisse id nulla 
-					ac urna vestibulum mattis. Duis rutrum porta tortor ut convallis.
-				</p>
-			</div>
-
-			<div class="pin">
-				<img src="http://cssdeck.com/uploads/media/items/1/1swi3Qy.png" />
-				<p>
-					Donec a fermentum nisi. Integer dolor est, commodo ut 
-					sagittis vitae, egestas at augue. Suspendisse id nulla 
-					ac urna vestibulum mattis. 
-				</p>
-			</div>
 
 			<div class="pin">
 				<img src="http://cssdeck.com/uploads/media/items/6/6f3nXse.png" />
@@ -183,6 +70,108 @@
 					ac blandit dui. Duis rutrum porta tortor ut convallis.
 				</p>
 			</div>
+			<div class="pin">
+				<img src="http://cssdeck.com/uploads/media/items/6/6f3nXse.png" />
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+					Sed feugiat consectetur pellentesque. Nam ac elit risus, 
+					ac blandit dui. Duis rutrum porta tortor ut convallis.
+				</p>
+			</div>
+			<div class="pin">
+				<img src="http://cssdeck.com/uploads/media/items/6/6f3nXse.png" />
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+					Sed feugiat consectetur pellentesque. Nam ac elit risus, 
+					ac blandit dui. Duis rutrum porta tortor ut convallis.
+				</p>
+			</div>
+			<div class="pin">
+				<img src="http://cssdeck.com/uploads/media/items/6/6f3nXse.png" />
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+					Sed feugiat consectetur pellentesque. Nam ac elit risus, 
+					ac blandit dui. Duis rutrum porta tortor ut convallis.
+				</p>
+			</div>
+			<div class="pin">
+				<img src="http://cssdeck.com/uploads/media/items/6/6f3nXse.png" />
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+					Sed feugiat consectetur pellentesque. Nam ac elit risus, 
+					ac blandit dui. Duis rutrum porta tortor ut convallis.
+				</p>
+			</div>
+			<div class="pin">
+				<img src="http://cssdeck.com/uploads/media/items/6/6f3nXse.png" />
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+					Sed feugiat consectetur pellentesque. Nam ac elit risus, 
+					ac blandit dui. Duis rutrum porta tortor ut convallis.
+				</p>
+			</div>
+			<div class="pin">
+				<img src="http://cssdeck.com/uploads/media/items/6/6f3nXse.png" />
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+					Sed feugiat consectetur pellentesque. Nam ac elit risus, 
+					ac blandit dui. Duis rutrum porta tortor ut convallis.
+				</p>
+			</div>
+
+
 		</div>
 	</div>
+
+	<div id="btn-cadastrar-filme" class="add-button">
+		<a class="btn-floating btn-large waves-effect waves-light red" href="#modal-cadastrar-filme"><i class="fa fa-plus fa-4x"></i></a>
+	</div>
+
+	<div id="modal-cadastrar-filme" class="modal">
+		<div class="modal-content">
+			<h4>Cadastro de Usuario</h4>
+			<form class="col s12">
+				<div class="row">
+					<div class="input-field col s6">
+						<input placeholder="Nome Completo" id="first_name" type="text" class="validate">
+						<label for="first_name"></label>
+					</div>
+					<div class="input-field col s6">
+						<input id="last_name" type="text" class="validate" placeholder="Login">
+						<label for="last_name"></label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-field col s12">
+						<input id="password" type="password" class="validate" placeholder="Senha">
+						<label for="password"></label>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="input-field col s12">
+						<input id="password" type="password" class="validate" placeholder="Informe novamente a senha">
+						<label for="password"></label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-field col s12">
+						<label for="email"></label>
+						<input id="email" type="email" class="validate" placeholder="Informe seu email">
+					</div>
+				</div>
+			</form>
+		</div>
+		<div class="modal-footer">
+			<a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Enviar</a>
+		</div>
+	</div>
+
+	<script>
+		$(document).ready(function() {
+			$('#btn-cadastrar-filme').click(function() { $("#modal-cadastrar-filme").openModal(); });
+		});
+	</script>
+
 </body>
+

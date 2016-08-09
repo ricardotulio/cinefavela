@@ -2,6 +2,10 @@ body {
 	background: url(http://subtlepatterns.com/patterns/scribble_light.png) ;
 }
 
+.container {
+	position: relative;
+}
+
 #wrapper {
 	width: 90%;
 	margin: 50px auto;
@@ -95,11 +99,58 @@ body {
 .photo img {
 	border-radius: 100%;
 	border: .5px solid black;	
+	height: 50px;
+
+}
+
+.photo-img {
+	display: flex;
+	justify-content: center;
+	align-content: center;
 }
 
 .member-name {
-    width: 100%;
+	width: 100%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
+
+.pin-social {
+	height: 60px;
+	width: 100%;
+	border:1px solid black;
+	display: flex;
+	flex-direction: row;
+}
+
+.comment {
+	height: 100%;
+	background-color: pink;
+	width: 70%;
+	padding: .5em;
+}
+
+.textarea {
+	height: 100%;
+	width: 100%;
+	resize: none;
+	position: relative;
+}
+
+.shared {
+	height: 100%;
+	background-color: yellow;
+	width: 15%;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+}
+
+.add-button {
+	bottom: 45px;
+	right: 24px;
+	position: fixed;
+	z-index: 900;
+}
+
