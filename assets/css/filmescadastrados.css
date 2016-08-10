@@ -69,7 +69,7 @@ body {
 	#columns {
 		-webkit-column-count: 4;
 		-moz-column-count: 4;
-		column-count: 4;
+		column-count: 5;
 	}
 }
 
@@ -153,4 +153,55 @@ body {
 	position: fixed;
 	z-index: 900;
 }
+
+.img-logo img {
+	height: 80px;
+	width: 100px;
+}
+
+.card {
+	display: flex;
+	flex-direction: column;
+	padding: 0;
+}
+
+.card-content {
+	display: flex;
+	flex-direction: column;
+	padding: 10px 16px;
+	width: auto;
+	height: auto;
+}
+
+
+
+.member-info {
+	height: 70px;
+	background-color: #fff;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+}
+
+.member-img {
+	width: 30%;
+	height: 100%;
+	background-color: yellow;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.img {
+	display: flex;
+}
+
+
+.member-name {
+	color: black;
+}
+
+
+
+
 

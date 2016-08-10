@@ -21,19 +21,52 @@
 </head>
 
 <body>
-	<div class="navbar-fixed">
+	<div class="navbar-fixed navegation">
 		<nav>
 			<div class="nav-wrapper">
-				<a href="#!" class="brand-logo">Logo</a>
 				<ul class="right hide-on-med-and-down">
-					<li><a href="sass.html">Sass</a></li>
-					<li><a href="badges.html">Components</a></li>
+					<li><a href="#">Eventos</a></li>
+					<li><a href="#">O Festival</a></li>
+					<li><a href="#">Oficinas</a></li>
+					<li><a href="#">Sobre</a></li>
 				</ul>
 			</div>
 		</nav>
 	</div>
+
 	<div id="wrapper">
 		<div id="columns">
+
+			<div class="card blue-grey darken-1">
+				<div class="card-content white-text">
+					<div class="col s12 m8 offset-m2 l6 offset-l3">
+						<div class="card-panel grey lighten-5 z-depth-1">
+							<div class="row valign-wrapper">
+								<div class="col s3">
+								<img src="images/yuna.jpg" alt="" class="circle responsive-img"> <!-- notice the "circle" class -->
+								</div>
+								<div class="col s9">
+									<span class="black-text">
+										This is a square image. Add the "circle" class to it to make it appear circular.
+									</span>
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+					<img src="http://cssdeck.com/uploads/media/items/6/6f3nXse.png" class="img-card"/>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+						Sed feugiat consectetur pellentesque. Nam ac elit risus, 
+						ac blandit dui. Duis rutrum porta tortor ut convallis.
+					</p>
+				</div>
+				<div class="card-action">
+					<a href="#">This is a link</a>
+					<a href="#">This is a link</a>
+				</div>
+			</div>
 
 			<div class="pin">
 				<img src="http://cssdeck.com/uploads/media/items/6/6f3nXse.png" />
@@ -167,10 +200,50 @@
 		</div>
 	</div>
 
+	<div id="modal-cadastrar-filme" class="modal">
+		<div class="modal-content">
+			<h4>Cadastro de Filme</h4>
+			<form class="col s12">
+				<div class="row">
+					<div class="input-field col s6">
+						<input placeholder="Titulo" id="title" type="text" class="validate">
+						<label for="title-movie"></label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-field col s12">
+						<input id="password" type="password" class="validate" placeholder="Senha">
+						<label for="password"></label>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="input-field col s12">
+						<input id="password" type="password" class="validate" placeholder="Informe novamente a senha">
+						<label for="password"></label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-field col s12">
+						<label for="email"></label>
+						<input id="email" type="email" class="validate" placeholder="Informe seu email">
+					</div>
+				</div>
+			</form>
+		</div>
+		<div class="modal-footer">
+			<a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Enviar</a>
+		</div>
+	</div>
+
+
+
 	<script>
 		$(document).ready(function() {
 			$('#btn-cadastrar-filme').click(function() { $("#modal-cadastrar-filme").openModal(); });
 		});
+
+
 	</script>
 
 </body>
