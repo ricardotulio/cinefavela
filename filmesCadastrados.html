@@ -11,19 +11,19 @@
 	<link rel="stylesheet"
 	href="node_modules/font-awesome/css/font-awesome.css">
 
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 	<link rel="stylesheet" href="assets/css/filmescadastrados.css">
 
 
 	<script src="node_modules/jquery/dist/jquery.js"></script>
-	<script src="node_modules/materialize-css/js/materialize.js"></script>
-	<script src="node_modules/materialize-css/js/velocity.min.js"></script>
-	<script src="node_modules/materialize-css/js/leanModal.js"></script>
+	<script type="text/javascript" src="node_modules/materialize-css/bin/materialize.js"></script>
 </head>
 
 <body>
 	<div class="navbar-fixed navegation">
 		<nav>
-			<div class="nav-wrapper">
+			<div class="nav-wrapper grey darken-1">
 				<ul class="right hide-on-med-and-down">
 					<li><a href="#">Eventos</a></li>
 					<li><a href="#">O Festival</a></li>
@@ -37,34 +37,32 @@
 	<div id="wrapper">
 		<div id="columns">
 
-			<div class="card blue-grey darken-1">
+			<div class="card darken-1">
 				<div class="card-content white-text">
 					<div class="col s12 m8 offset-m2 l6 offset-l3">
-						<div class="card-panel grey lighten-5 z-depth-1">
-							<div class="row valign-wrapper">
-								<div class="col s3">
-								<img src="images/yuna.jpg" alt="" class="circle responsive-img"> <!-- notice the "circle" class -->
-								</div>
-								<div class="col s9">
-									<span class="black-text">
-										This is a square image. Add the "circle" class to it to make it appear circular.
-									</span>
-								</div>
+						<div class="row valign-wrapper">
+							<div class="col s5">
+								<img src="assets/media/avatar.png" alt="" class="circle	responsive-img"> <!-- notice the "circle" class -->
+							</div>
+							<div class="col s7">
+								<span class="black-text">
+									XABLAUZEIRO
+								</span>
 							</div>
 						</div>
 					</div>
 
-
-					<img src="http://cssdeck.com/uploads/media/items/6/6f3nXse.png" class="img-card"/>
+					<img src="http://cssdeck.com/uploads/media/items/6/6f3nXse.png" class="img-card responsive-img"/>
 					<p>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-						Sed feugiat consectetur pellentesque. Nam ac elit risus, 
-						ac blandit dui. Duis rutrum porta tortor ut convallis.
+						<span class="black-text">
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+							Sed feugiat consectetur pellentesque. Nam ac elit risus, 
+							ac blandit dui. Duis rutrum porta tortor ut convallis.
+						</span>
 					</p>
 				</div>
 				<div class="card-action">
-					<a href="#">This is a link</a>
-					<a href="#">This is a link</a>
+					<i class="material-icons">thumb_up</i>
 				</div>
 			</div>
 
@@ -157,10 +155,10 @@
 	</div>
 
 	<div id="btn-cadastrar-filme" class="add-button">
-		<a class="btn-floating btn-large waves-effect waves-light red" href="#modal-cadastrar-filme"><i class="fa fa-plus fa-4x"></i></a>
+		<a class="btn-floating btn-large waves-effect waves-circle waves-light red" href="#modal-cadastrar-filme"><i class="large material-icons">add</i></a>
 	</div>
 
-	<div id="modal-cadastrar-filme" class="modal">
+	<div id="modal-cadastrar-usuario" class="modal">
 		<div class="modal-content">
 			<h4>Cadastro de Usuario</h4>
 			<form class="col s12">
@@ -200,8 +198,8 @@
 		</div>
 	</div>
 
-	<div id="modal-cadastrar-filme" class="modal">
-		<div class="modal-content">
+	<div id="modal-cadastrar-filme" class="modal modal-cadastrar-filme">
+		<div class="modal-content intern-modal">
 			<h4>Cadastro de Filme</h4>
 			<form class="col s12">
 				<div class="row">
@@ -212,21 +210,14 @@
 				</div>
 				<div class="row">
 					<div class="input-field col s12">
-						<input id="password" type="password" class="validate" placeholder="Senha">
-						<label for="password"></label>
-					</div>
-				</div>
-
-				<div class="row">
-					<div class="input-field col s12">
-						<input id="password" type="password" class="validate" placeholder="Informe novamente a senha">
-						<label for="password"></label>
+						<textarea id="textarea1" class="materialize-textarea" placeholder="Faça uma breve descrição sobre o projeto"></textarea>
+						<label for="textarea1"></label>
 					</div>
 				</div>
 				<div class="row">
 					<div class="input-field col s12">
 						<label for="email"></label>
-						<input id="email" type="email" class="validate" placeholder="Informe seu email">
+						<input id="email" type="email" class="validate" placeholder="Informe a URL do youtube">
 					</div>
 				</div>
 			</form>
