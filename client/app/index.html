@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Document</title>
+
+  <link rel="stylesheet" href="bower_components/materialize/bin/materialize.css">
+  <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css">
+  <link rel="stylesheet" href="bower_components/76d-social-icons/assets/css/social-icons.css">
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+
+<body>
+  <div class="navbar-fixed">
+    <nav>
+      <div class="nav-wrapper">
+        <ul class="right hide-on-med-and-down">
+          <li><a href="http://www.google.com.br">Sair</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+  <div class="container main">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <div class="content">
+      <ng-view></ng-view>
+
+      
+    </div>
+  </div>
+
+  <footer class="footer red lighten-1 row">
+    <div class="col s12 m8 offset-m2 l6 offset-l3">
+      <div class="social-network">
+        <div class="social-network-item social-network-youtube">
+          <a href="http://www.youtube.com" target="_blank" title="YouTube" class="si-circle si-large si-colored si-youtube"></a>
+        </div>
+        <div class="social-network-item social-network-facebook">
+          <a href="http://www.facebook.com" target="_blank" title="Facebook" class="si-circle si-large si-colored si-facebook"></a>
+        </div>
+        <div class="social-network-item social-network-twitter">
+          <a href="http://www.twitter.com" target="_blank" title="Twitter" class="si-circle si-large si-colored si-twitter"></a>
+        </div>
+        <div class="social-network-item social-network-instagram">
+          <a href="http://www.instagram.com" target="_blank" title="Instagram" class="si-circle si-large si-colored si-instagram"></a>
+        </div>
+      </div>
+      <div class="row">
+        <p class="center-align white-text">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut at imperdiet arcu. Curabitur maximus ipsum sollicitudin lectus
+          dignissim, ultrices mattis dui pretium. Praesent a commodo erat, vitae placerat magna. Vivamus lacinia nec diam
+          et maximus.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+
+  <script src="bower_components/angular/angular.min.js"></script>
+  <script src="bower_components/angular-route/angular-route.min.js"></script>
+
+  <script src="scripts/main.js"></script>
+  <script src="scripts/controllers/home.js"></script>
+  <script src="scripts/controllers/filmes.js"></script>
+  <script src="scripts/routes.js"></script>
+
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/materialize/bin/materialize.js"></script>
+</body>
+
+</html>
