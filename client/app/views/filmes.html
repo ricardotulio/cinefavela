@@ -1,185 +1,357 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<a id="btn-logar" class="btn-floating btn-large waves-effect waves-light blue" onclick="javascript: $('#modal-login').openModal();"><i class="material-icons">add</i></a>
+<br>
+<a id="btn-sign-in" class="btn-floating btn-large waves-effect waves-light blue" onclick="javascript: $('#modal-sign-in').openModal();"><i class="material-icons">add</i></a>
+<br>
+<a id="btn-watch-video" class="btn-floating btn-large waves-effect waves-light blue" onclick="javascript: $('#modal-watch-video').openModal();"><i class="material-icons">add</i></a>
+
+
+
 <div class="filmes row">
-  <div class="filme" ng-repeat="filme in filmes | orderBy: '-'">
-    <div class="card">
-      <div class="card-avatar">
-        <div class="avatar-imagem valign-wrapper">
-          <figure class="valign">
-            <img ng-src="{{filme.usuario.avatar}}">
-          </figure>
-        </div>
-        <div class="avatar-nome valign-wrapper">
-          <h5 class="valign">{{filme.usuario.nome}}</h5>
-        </div>
-      </div>
-      <div class="card-image">
-        <img src="http://img.historiadigital.org/2013/12/Filme-Gladiador-2000.jpg">
-        <span class="card-title">{{filme.titulo}}</span>
-      </div>
-      <div class="card-content">
-        <p>{{filme.sinopse}}</p>
-      </div>
-      <div class="card-action right-align">
-        <a class="btn-like grey-text text-darken-1"><i class="material-icons">thumb_up</i></a>
-      </div>
-    </div>
-  </div>
+  <filme ng-repeat="filme in filmes" filme="filme"></filme>
+</div>
 
-  <a id="btn-inscrever" class="btn-floating btn-large waves-effect waves-light blue" onclick="javascript: $('#modal-inscrever').openModal();"><i class="material-icons">add</i></a>
+<a id="btn-inscrever" class="btn-floating btn-large waves-effect waves-light blue" onclick="javascript: $('#modal-inscrever').openModal();"><i class="material-icons">add</i></a>
 
-  <div id="modal-inscrever" class="modal modal-fixed-footer">
-    <div class="modal-content">
-      <h4>Increva seu filme</h4>
-      <form class="col s12">
-        <div class="row">
-          <div class="input-field col s12">
-            <input placeholder="Digite seu nome" id="nome" ng-model="filme.usuario.nome" type="text" class="validate">
-            <label for="nome">Nome</label>
-          </div>
+<div id="modal-inscrever" class="modal modal-fixed-footer">
+  <div class="modal-content">
+    <h4>Increver Filme</h4>
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s12">
+          <input placeholder="Informe o titulo do Filme" id="titulo" ng-model="filme.usuario.titulo" type="text" class="validate">
+          <label for="titulo">Titulo</label>
         </div>
-        <div class="row">
-          <div class="input-field col s12">
-            <input placeholder="Dê um título para sua história" ng-model="filme.titulo" id="titulo" type="text" class="validate">
-            <label for="titulo">Título</label>
-          </div>
+      </div>
+    <!--   <div class="row">
+        <div class="input-field col s12">
+          <input placeholder="Dê um título para sua história" ng-model="filme.titulo" id="titulo" type="text" class="validate">
+          <label for="titulo">Título</label>
         </div>
-        <div class="row">
-          <div class="input-field col s12">
-            <textarea placeholder="Conte-nos sobre a sua história" ng-model="filme.sinopse" id="depoimento" type="text" class="materialize-textarea validate"></textarea>
-            <label for="depoimento">História</label>
-          </div>
+      </div> -->
+      <div class="row">
+        <div class="input-field col s12">
+          <textarea placeholder="Faça uma sinopse da obra" ng-model="filme.sinopse" id="sinopse" type="text" class="materialize-textarea validate"></textarea>
+          <label for="sinopse">Sinopse</label>
         </div>
-        <div class="row">
-          <div class="input-field col s12">
-            <input placeholder="Cole aqui o link do seu vídeo no YouTube" ng-model="filme.video_url" ng-change="exibePreVisualizacao()" id="video_url" type="text"
-              class="validate">
-            <label for="video_url">Link do YouTube</label>
-          </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input placeholder="Cole aqui o link do seu vídeo no YouTube" ng-model="filme.video_url" ng-change="exibePreVisualizacao()" id="video_url" type="text"
+          class="validate">
+          <label for="video_url">Link do YouTube</label>
         </div>
-        <div ng-show="carregandoVideo" class="row center-align">
-          <div class="preloader-wrapper big active">
-            <div class="spinner-layer spinner-blue-only">
-              <div class="circle-clipper left">
-                <div class="circle"></div>
-              </div>
-              <div class="gap-patch">
-                <div class="circle"></div>
-              </div>
-              <div class="circle-clipper right">
-                <div class="circle"></div>
-              </div>
+      </div>
+      <div ng-show="carregandoVideo" class="row center-align">
+        <div class="preloader-wrapper big active">
+          <div class="spinner-layer spinner-blue-only">
+            <div class="circle-clipper left">
+              <div class="circle"></div>
+            </div>
+            <div class="gap-patch">
+              <div class="circle"></div>
+            </div>
+            <div class="circle-clipper right">
+              <div class="circle"></div>
             </div>
           </div>
         </div>
-        <div ng-show="exibirVideo" class="row">
-          <div class="video-container">
-            <iframe width="853" height="480" ng-src="{{filme.video_url}}" frameborder="0" allowfullscreen></iframe>
-          </div>
+      </div>
+      <div ng-show="exibirVideo" class="row">
+        <div class="video-container">
+          <iframe width="853" height="480" ng-src="{{filme.video_url}}" frameborder="0" allowfullscreen></iframe>
         </div>
-      </form>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <a href="javascript:void(0)" class=" modal-action modal-close waves-effect waves-green btn-flat" ng-click="inscreverFilme(filme)"><i class="fa fa-share-alt" aria-hidden="true"></i>  Inscrever </a>
+  </div>
+</div>
+
+<div id="modal-login" class="s12 m6 l6 modal modal-fixed-footer modal-login">
+ <div class="modal-content-login">
+   <form class="login-form">
+    <div class="row margin">
+      <div class="input-field col s12">
+       <h4>Efetuar Login</h4>
+     </div>
+   </div>
+
+   <div class="row margin">
+    <div class="input-field col s12">
+      <i class="material-icons prefix">account_circle</i>
+      <i class="mdi-action-lock-outline prefix"></i>
+      <input id="login" type="text">
+      <label for="login">Login</label>
     </div>
-    <div class="modal-footer">
-      <a href="javascript:void(0)" class=" modal-action modal-close waves-effect waves-green btn-flat" ng-click="inscreverFilme(filme)"><i class="fa fa-share-alt" aria-hidden="true"></i> Compartilhar</a>
+  </div>
+  <div class="row margin">
+    <div class="input-field col s12">
+      <i class="material-icons prefix">lock_outline</i>
+      <i class="mdi-action-lock-outline prefix"></i>
+      <input id="password" type="password">
+      <label for="password">Senha</label>
+    </div>
+  </div>
+  <div class="row">          
+    <div class="input-field col s12 m12 l12  login-text">
+      <input type="checkbox" id="remember-me">
+      <label for="remember-me">Lembre - me </label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="input-field col s12">
+      <a href="index.html" class="btn waves-effect waves-light col s12">Login</a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="input-field col s6 m6 l6">
+      <p class="margin medium-small"><a href="page-register.html">Registre-se</a></p>
+    </div>
+    <div class="input-field col s6 m6 l6">
+      <p class="margin right-align medium-small"><a href="page-forgot-password.html">Esqueceu a Senha ?</a></p>
+    </div>          
+  </div>
+</form>
+</div>
+</div>
+
+
+
+
+
+
+
+<div id="modal-sign-in" class="modal">
+  <div class="modal-content">
+    <div class="input-field col s12">
+     <h4>Cadastro de Usuario</h4>
+   </div>
+
+   <form class="col s12">
+    <div class="row">
+     <div class="input-field col s6">
+      <i class="material-icons prefix">account_circle</i>
+      <input id="icon_prefix" type="text" class="validate">
+      <label for="icon_prefix">Nome</label>
+    </div>
+    <div class="input-field col s6">
+      <input id="icon_prefix" type="text" class="validate">
+      <label for="sobrenome">Sobrenome</label>
     </div>
   </div>
 
-  <style>
-    #wrapper {
-      width: 90%;
-      max-width: 1100px;
-      min-width: 800px;
-      margin: 50px auto;
-    }
-    
+  <div class="row">
+    <div class="input-field col s12">
+      <i class="material-icons prefix">lock</i>
+      <input id="password" type="password" class="validate">
+      <label for="password">Senha</label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="input-field col s12">
+      <i class="material-icons prefix">lock_outline</i>
+      <input id="confirm-password" type="password" class="validate">
+      <label for="confirm-password">Confirmar Senha</label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="input-field col s12">
+      <i class="material-icons prefix">email</i>
+      <input id="email" type="email" class="validate">
+      <label for="email">Email</label>
+    </div>
+  </div>
+
+  <div class="input-field col s12">
+    <a href="#" class="btn waves-effect waves-light col s12">Cadastrar</a>
+  </div>
+</form>
+</div>
+</div>
+
+
+<div id="modal-watch-video" class="s12 s6 l6 modal watch-video">
+  <div class="modal-content">
+   <div class="video-container">
+    <iframe width="420" height="315" src="https://www.youtube.com/embed/B7zPiF149q8?rel=0&amp;controls=0&amp;showinfo=0&amp;autoplay=1" frameborder="0" allowfullscreen></iframe>
+  </div>
+  <a id="btn-fechar" class="modal-action modal-close">X</a>
+</div>
+</div>
+
+
+
+
+
+
+
+
+<style>
+  #btn-fechar {
+    position: fixed;
+    top: -1.5em;
+    right: -1.5em;
+    z-index: 9999;
+    color: #fff;
+    opacity: .5;
+    font-weight: bolder;
+  }
+
+  #modal-watch-video .modal-content {
+    padding: 0px;
+    height: auto;
+  }
+
+  #modal-watch-video.modal {
+    display: none;
+    position: fixed;
+    left: 0;
+    right: 0;
+    background-color: #fafafa;
+    padding: 0;
+    max-height: 80% !important;
+    width: 90% !important;
+    margin: auto;
+    overflow-y: auto;
+    border-radius: 2px;
+    will-change: top, opacity;
+    overflow-y: hidden;
+  }
+
+  .video-container {
+    position:relative;
+    padding-bottom:56.25%;
+    padding-top:30px;
+    height:0;
+    overflow:hidden;
+  }
+
+  .video-container iframe, .video-container object, .video-container embed {
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+  }
+
+
+  #modal-watch-video {
+    height: auto;
+    border: 1px solid black;
+  }
+
+
+  #modal-login {
+    overflow-y: hidden;
+    overflow-x: hidden;
+  }
+
+  .login-form {
+    padding: 1em;
+  }
+
+
+
+  #wrapper {
+    width: 90%;
+    max-width: 1100px;
+    min-width: 800px;
+    margin: 50px auto;
+  }
+
+  .filmes {
+    -webkit-column-count: 1;
+    -webkit-column-gap: 10px;
+    -webkit-column-fill: auto;
+    -moz-column-count: 1;
+    -moz-column-gap: 10px;
+    -moz-column-fill: auto;
+    column-count: 1;
+    column-gap: 15px;
+    column-fill: auto;
+  }
+
+  .filme {
+    display: inline-block;
+    background: #FEFEFE;
+    -webkit-column-break-inside: avoid;
+    -moz-column-break-inside: avoid;
+    column-break-inside: avoid;
+    background: -webkit-linear-gradient(45deg, #FFF, #F9F9F9);
+    opacity: 1;
+    -webkit-transition: all .2s ease;
+    -moz-transition: all .2s ease;
+    -o-transition: all .2s ease;
+    transition: all .2s ease;
+  }
+
+  .card-avatar {
+    height: calc(60px + 2em);
+    padding: 1em;
+  }
+
+  .avatar-imagem,
+  .avatar-nome {
+    display: flex;
+    float: left;
+  }
+
+  .avatar-imagem figure {
+    margin: 0px;
+  }
+
+  .avatar-nome {
+    display: flex;
+    height: 100%;
+    padding-left: 1em;
+  }
+
+  .avatar-nome h4 {
+    margin: 0px;
+  }
+
+  figure img {
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+  }
+
+  #btn-inscrever {
+    position: fixed;
+    right: 1em;
+    bottom: 1em;
+  }
+
+  @media (min-width: 600px) {
     .filmes {
-      -webkit-column-count: 1;
-      -webkit-column-gap: 10px;
-      -webkit-column-fill: auto;
-      -moz-column-count: 1;
-      -moz-column-gap: 10px;
-      -moz-column-fill: auto;
-      column-count: 1;
-      column-gap: 15px;
-      column-fill: auto;
+      -webkit-column-count: 2;
+      -moz-column-count: 2;
+      column-count: 2;
     }
-    
-    .filme {
-      display: inline-block;
-      background: #FEFEFE;
-      -webkit-column-break-inside: avoid;
-      -moz-column-break-inside: avoid;
-      column-break-inside: avoid;
-      background: -webkit-linear-gradient(45deg, #FFF, #F9F9F9);
-      opacity: 1;
-      -webkit-transition: all .2s ease;
-      -moz-transition: all .2s ease;
-      -o-transition: all .2s ease;
-      transition: all .2s ease;
-    }
-    
-    .card-avatar {
-      height: calc(60px + 2em);
-      padding: 1em;
-    }
-    
-    .avatar-imagem,
-    .avatar-nome {
-      display: flex;
-      float: left;
-    }
-    
-    .avatar-imagem figure {
-      margin: 0px;
-    }
-    
-    .avatar-nome {
-      display: flex;
-      height: 100%;
-      padding-left: 1em;
-    }
-    
-    .avatar-nome h4 {
-      margin: 0px;
-    }
-    
-    figure img {
-      width: 60px;
-      height: 60px;
-      border-radius: 100%;
-    }
-    
+
     #btn-inscrever {
       position: fixed;
-      right: 1em;
-      bottom: 1em;
+      right: 2em;
+      bottom: 2em;
     }
-    
-    @media (min-width: 600px) {
-      .filmes {
-        -webkit-column-count: 2;
-        -moz-column-count: 2;
-        column-count: 2;
-      }
-      
-      #btn-inscrever {
-        position: fixed;
-        right: 2em;
-        bottom: 2em;
-      }
+  }
+
+  @media (min-width: 992px) {
+    .filmes {
+      -webkit-column-count: 3;
+      -moz-column-count: 3;
+      column-count: 3;
     }
-    
-    @media (min-width: 992px) {
-      .filmes {
-        -webkit-column-count: 3;
-        -moz-column-count: 3;
-        column-count: 3;
-      }
+  }
+
+  @media (min-width: 1170px) {
+    .filmes {
+      -webkit-column-count: 4;
+      -moz-column-count: 4;
+      column-count: 4;
     }
-    
-    @media (min-width: 1170px) {
-      .filmes {
-        -webkit-column-count: 4;
-        -moz-column-count: 4;
-        column-count: 4;
-      }
-    }
-  </style>
+  }
+</style>

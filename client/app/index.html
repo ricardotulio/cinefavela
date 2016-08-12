@@ -14,9 +14,10 @@
 </head>
 
 <body>
+
   <div class="navbar-fixed">
     <nav>
-      <div class="nav-wrapper">
+      <div class="nav-wrapper grey lighten-1">
         <ul class="right hide-on-med-and-down">
           <li><a href="http://www.google.com.br">Sair</a></li>
         </ul>
@@ -27,13 +28,11 @@
   <div class="container main">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <div class="content">
-      <ng-view></ng-view>
-
-      
+      <ng-view></ng-view>      
     </div>
   </div>
 
-  <footer class="footer red lighten-1 row">
+  <footer class="footer grey lighten-1 row">
     <div class="col s12 m8 offset-m2 l6 offset-l3">
       <div class="social-network">
         <div class="social-network-item social-network-youtube">
@@ -58,18 +57,18 @@
       </div>
     </div>
   </footer>
-
-
   <script src="bower_components/angular/angular.min.js"></script>
   <script src="bower_components/angular-route/angular-route.min.js"></script>
 
   <script src="scripts/main.js"></script>
+  <script src="scripts/directives/filme.js"></script>
   <script src="scripts/controllers/home.js"></script>
   <script src="scripts/controllers/filmes.js"></script>
   <script src="scripts/routes.js"></script>
 
   <script src="bower_components/jquery/dist/jquery.js"></script>
   <script src="bower_components/materialize/bin/materialize.js"></script>
+
 </body>
 
 </html>
