@@ -1,6 +1,7 @@
 (function() {
-	var FilmesController = function($scope) {
+	var FilmesController = function($rootScope, $scope) {
 		
+		$scope.tentouInscreverFilme = false;
 		$scope.carregandoVideo = false;
 		$scope.filmes = [];
 
@@ -21,11 +22,53 @@
 			});
 		}
 
+		$scope.abrirFormularioInscricao = function() {
+			var tokenAcesso = localStorage.getItem("token_acesso");
+			
+			if(tokenAcesso == null) {
+				$scope.tentouInscreverFilme = true;
+				$scope.abrirFormularioLogin();
+			}else {
+				$("#modal-inscrever-filme").openModal();
+			}
+		}
+
+		$scope.abrirFormularioLogin = function() {
+			$("#modal-login").openModal();
+		}
+
+		$scope.login = function() {
+			var tokenAcesso = localStorage.setItem("token_acesso" , "userToker");
+
+			$rootScope.usuario = {
+				nome: "ricardo"
+			};
+
+			if($scope.tentouInscreverFilme) {
+				$('#modal-login').closeModal();
+				$scope.abrirFormularioInscricao();
+			}
+		}
+
+		$rootScope.logout = function() {
+			var tokenAcesso = localStorage.removeItem("token_acesso");
+			location.reload();
+		}
+
+		$scope.cadastrarSe = function() {
+			$('#modal-login').closeModal();
+			$('#modal-sign-in').openModal();
+		}
+
 		$scope.inscreverFilme = function (filme) {
 			$scope.obtemIdVideoYouTube(filme.video_url, function (id) {
-				filme.thumbnail = "https://i.ytimg.com/vi/" + id + "/hqdefault.jpg";
-				filme.usuario.avatar = "http://4.bp.blogspot.com/-j4dl9EFp56k/VZGfHo4q4jI/AAAAAAAAChw/BtWkmYFkd6U/s1600/anonimo.png";
-				$scope.filmes.push(filme);
+				filme.capa = "https://i.ytimg.com/vi/" + id + "/hqdefault.jpg";
+				filme.usuario = {
+					nome: "Ricardão",
+					avatar: "media/images/avatar.png"
+				};
+				$scope.filmes.push(angular.copy(filme));
+				$scope.filme = {};
 			});
 		}
 
@@ -38,10 +81,10 @@
 				errorback(null);
 			}
 		}
-		
+
 	}
 
-	FilmesController.$inject = [ '$scope' ];
+	FilmesController.$inject = [ '$rootScope', '$scope' ];
 
 	angular.module('app').controller('FilmesController', FilmesController);
 })();

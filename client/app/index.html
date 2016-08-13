@@ -11,6 +11,8 @@
   <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css">
   <link rel="stylesheet" href="bower_components/76d-social-icons/assets/css/social-icons.css">
   <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="../styles/pin.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 <body>
@@ -19,14 +21,14 @@
     <nav>
       <div class="nav-wrapper grey lighten-1">
         <ul class="right hide-on-med-and-down">
-          <li><a href="http://www.google.com.br">Sair</a></li>
+          <li ng-hide="usuario"><a href="javascript:void(0)" ng-click="logout()">Sair</a></li>
+          <li ng-show="usuario"><a href="javascript:void(0)">{{usuario.nome}}</a></li>
         </ul>
       </div>
     </nav>
   </div>
 
-  <div class="container main">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <div class="container-fluid main">
     <div class="content">
       <ng-view></ng-view>      
     </div>

@@ -7,6 +7,10 @@ html, body {
   justify-content: space-between;
 }
 
+.container-fluid { 
+	min-height: 80%;
+}
+
 footer {
 	padding-top: 1em;
 }

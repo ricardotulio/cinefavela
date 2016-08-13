@@ -1,7 +1,7 @@
 (function() {
 	var FilmeDirective = function() {
 		return {
-			restrict: 'E'
+			restrict: 'E',
 			scope: {
 				filme: '=filme'
 			},

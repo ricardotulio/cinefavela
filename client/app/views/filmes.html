@@ -1,73 +1,87 @@
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-<a id="btn-logar" class="btn-floating btn-large waves-effect waves-light blue" onclick="javascript: $('#modal-login').openModal();"><i class="material-icons">add</i></a>
-<br>
-<a id="btn-sign-in" class="btn-floating btn-large waves-effect waves-light blue" onclick="javascript: $('#modal-sign-in').openModal();"><i class="material-icons">add</i></a>
-<br>
-<a id="btn-watch-video" class="btn-floating btn-large waves-effect waves-light blue" onclick="javascript: $('#modal-watch-video').openModal();"><i class="material-icons">add</i></a>
-
-
-
-<div class="filmes row">
-  <filme ng-repeat="filme in filmes" filme="filme"></filme>
+<div>
+  
+</div>
+<div id="wrapper" ng-hide="filmes.length == 0">
+  <div id="columns">
+    <filme ng-repeat="filme in filmes" filme="filme"></filme>
+  </div>
+</div>
+<div ng-show="filmes.length == 0">
+  <h1>Ops... não há nenhum filme inscrito. <a href="javascript:void(0)" ng-click="abrirFormularioInscricao()">Clique aqui e seja o primeiro a se inscrever.</a></h1>
 </div>
 
-<a id="btn-inscrever" class="btn-floating btn-large waves-effect waves-light blue" onclick="javascript: $('#modal-inscrever').openModal();"><i class="material-icons">add</i></a>
+<a id="btn-logar" class="btn-floating btn-large waves-effect waves-light blue hide" ng-click="abrirFormularioInscricao()"><i class="material-icons">add</i></a>
+<br>
+<a id="btn-sign-in" class="btn-floating btn-large waves-effect waves-light blue hide" onclick="javascript: $('#modal-sign-in').openModal();"><i class="material-icons">add</i></a>
+<br>
+<a id="btn-watch-video" class="btn-floating btn-large waves-effect waves-light blue hide" onclick="javascript: $('#modal-watch-video').openModal();"><i class="material-icons">add</i></a>
 
-<div id="modal-inscrever" class="modal modal-fixed-footer">
+<a id="btn-inscrever-filme" class="btn-floating btn-large waves-effect waves-light blue" ng-click="abrirFormularioInscricao()"><i class="material-icons">add</i></a>
+
+<div id="modal-inscrever-filme" class="modal modal-fixed-footer modal-inscrever-filme">
   <div class="modal-content">
     <h4>Increver Filme</h4>
     <form class="col s12">
       <div class="row">
         <div class="input-field col s12">
-          <input placeholder="Informe o titulo do Filme" id="titulo" ng-model="filme.usuario.titulo" type="text" class="validate">
+          <input placeholder="Informe o titulo do Filme" id="titulo" ng-model="filme.titulo" type="text" class="validate">
           <label for="titulo">Titulo</label>
         </div>
       </div>
-    <!--   <div class="row">
-        <div class="input-field col s12">
-          <input placeholder="Dê um título para sua história" ng-model="filme.titulo" id="titulo" type="text" class="validate">
-          <label for="titulo">Título</label>
-        </div>
-      </div> -->
+
       <div class="row">
         <div class="input-field col s12">
           <textarea placeholder="Faça uma sinopse da obra" ng-model="filme.sinopse" id="sinopse" type="text" class="materialize-textarea validate"></textarea>
           <label for="sinopse">Sinopse</label>
         </div>
       </div>
+
       <div class="row">
-        <div class="input-field col s12">
-          <input placeholder="Cole aqui o link do seu vídeo no YouTube" ng-model="filme.video_url" ng-change="exibePreVisualizacao()" id="video_url" type="text"
-          class="validate">
-          <label for="video_url">Link do YouTube</label>
+       <div class="file-field input-field">
+        <div class="btn">
+          <span>File</span>
+          <input type="file" ng-model="filme.capa">
+        </div>
+        <div class="file-path-wrapper">
+          <label for="sinopse">Capa do Filme</label>
+          <input class="file-path validate" type="text" placeholder="Envie uma foto que sera a capa do seu filme">
         </div>
       </div>
-      <div ng-show="carregandoVideo" class="row center-align">
-        <div class="preloader-wrapper big active">
-          <div class="spinner-layer spinner-blue-only">
-            <div class="circle-clipper left">
-              <div class="circle"></div>
-            </div>
-            <div class="gap-patch">
-              <div class="circle"></div>
-            </div>
-            <div class="circle-clipper right">
-              <div class="circle"></div>
-            </div>
+    </div>
+
+
+    <div class="row">
+      <div class="input-field col s12">
+        <input placeholder="Cole aqui o link do seu vídeo no YouTube" ng-model="filme.video_url" ng-change="exibePreVisualizacao()" id="video_url" type="text"
+        class="validate">
+        <label for="video_url">Link do YouTube</label>
+      </div>
+    </div>
+    <div ng-show="carregandoVideo" class="row center-align">
+      <div class="preloader-wrapper big active">
+        <div class="spinner-layer spinner-blue-only">
+          <div class="circle-clipper left">
+            <div class="circle"></div>
+          </div>
+          <div class="gap-patch">
+            <div class="circle"></div>
+          </div>
+          <div class="circle-clipper right">
+            <div class="circle"></div>
           </div>
         </div>
       </div>
-      <div ng-show="exibirVideo" class="row">
-        <div class="video-container">
-          <iframe width="853" height="480" ng-src="{{filme.video_url}}" frameborder="0" allowfullscreen></iframe>
-        </div>
+    </div>
+    <div ng-show="exibirVideo" class="row">
+      <div class="video-container">
+        <iframe width="853" height="480" ng-src="{{filme.video_url}}" frameborder="0" allowfullscreen></iframe>
       </div>
-    </form>
-  </div>
-  <div class="modal-footer">
-    <a href="javascript:void(0)" class=" modal-action modal-close waves-effect waves-green btn-flat" ng-click="inscreverFilme(filme)"><i class="fa fa-share-alt" aria-hidden="true"></i>  Inscrever </a>
-  </div>
+    </div>
+  </form>
+</div>
+<div class="modal-footer">
+  <a href="javascript:void(0)" class=" modal-action modal-close waves-effect waves-green btn-flat" ng-click="inscreverFilme(filme)"><i class="fa fa-share-alt" aria-hidden="true"></i>  Inscrever </a>
+</div>
 </div>
 
 <div id="modal-login" class="s12 m6 l6 modal modal-fixed-footer modal-login">
@@ -103,12 +117,12 @@
   </div>
   <div class="row">
     <div class="input-field col s12">
-      <a href="index.html" class="btn waves-effect waves-light col s12">Login</a>
+      <a href="javascript:void(0)" class="btn-login btn waves-effect waves-light col s12" ng-click="login()">Login</a>
     </div>
   </div>
   <div class="row">
     <div class="input-field col s6 m6 l6">
-      <p class="margin medium-small"><a href="page-register.html">Registre-se</a></p>
+      <p class="margin medium-small"><a href="javascript:void(0)" ng-click="cadastrarSe()">Cadastrar-se</a></p>
     </div>
     <div class="input-field col s6 m6 l6">
       <p class="margin right-align medium-small"><a href="page-forgot-password.html">Esqueceu a Senha ?</a></p>
@@ -117,12 +131,6 @@
 </form>
 </div>
 </div>
-
-
-
-
-
-
 
 <div id="modal-sign-in" class="modal">
   <div class="modal-content">
@@ -164,30 +172,23 @@
       <label for="email">Email</label>
     </div>
   </div>
-
-  <div class="input-field col s12">
-    <a href="#" class="btn waves-effect waves-light col s12">Cadastrar</a>
+   
   </div>
+  <div class="modal-footer">
+ <a href="#" class="btn waves-effect waves-light col s12">Cadastrar</a>
+</div>
 </form>
 </div>
 </div>
 
-
 <div id="modal-watch-video" class="s12 s6 l6 modal watch-video">
   <div class="modal-content">
    <div class="video-container">
-    <iframe width="420" height="315" src="https://www.youtube.com/embed/B7zPiF149q8?rel=0&amp;controls=0&amp;showinfo=0&amp;autoplay=1" frameborder="0" allowfullscreen></iframe>
+    <iframe width="420" height="315" src="https://www.youtube.com/embed/B7zPiF149q8?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
   </div>
   <a id="btn-fechar" class="modal-action modal-close">X</a>
 </div>
 </div>
-
-
-
-
-
-
-
 
 <style>
   #btn-fechar {
@@ -249,11 +250,19 @@
     overflow-x: hidden;
   }
 
-  .login-form {
-    padding: 1em;
+  #modal-login.modal {
+    height: 85% !important;
+    max-height: 85% !important;
   }
 
 
+  #modal-inscrever-filme.modal {
+    height: 80%;
+  }
+
+  .login-form {
+    padding: 1em;
+  }
 
   #wrapper {
     width: 90%;
@@ -269,7 +278,7 @@
     -moz-column-count: 1;
     -moz-column-gap: 10px;
     -moz-column-fill: auto;
-    column-count: 1;
+    column-count: 3;
     column-gap: 15px;
     column-fill: auto;
   }
@@ -286,6 +295,7 @@
     -moz-transition: all .2s ease;
     -o-transition: all .2s ease;
     transition: all .2s ease;
+    column: 1;
   }
 
   .card-avatar {
@@ -319,39 +329,65 @@
     border-radius: 100%;
   }
 
-  #btn-inscrever {
+
+  #btn-watch-video {
+   position: fixed;
+   right: 2em;
+   bottom: 14em;
+ }
+
+ #btn-sign-in {
+  position: fixed;
+  right: 2em;
+  bottom: 10em;
+}
+
+#btn-logar {
+  position: fixed;
+  right: 2em;
+  bottom: 6em;
+}
+
+#btn-inscrever-filme {
+  position: fixed;
+  right: 1em;
+  bottom: 1em;
+}
+
+@media (min-width: 600px) {
+  .filmes {
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+  }
+
+  #btn-inscrever-filme {
     position: fixed;
-    right: 1em;
-    bottom: 1em;
+    right: 2em;
+    bottom: 2em;
   }
+}
 
-  @media (min-width: 600px) {
-    .filmes {
-      -webkit-column-count: 2;
-      -moz-column-count: 2;
-      column-count: 2;
-    }
-
-    #btn-inscrever {
-      position: fixed;
-      right: 2em;
-      bottom: 2em;
-    }
+@media (min-width: 992px) {
+  .filmes {
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+    column-count: 3;
   }
+}
 
-  @media (min-width: 992px) {
-    .filmes {
-      -webkit-column-count: 3;
-      -moz-column-count: 3;
-      column-count: 3;
-    }
+@media (min-width: 1170px) {
+  .filmes {
+    -webkit-column-count: 4;
+    -moz-column-count: 4;
+    column-count: 4;
   }
+}
 
-  @media (min-width: 1170px) {
-    .filmes {
-      -webkit-column-count: 4;
-      -moz-column-count: 4;
-      column-count: 4;
-    }
+@media(min-width: 1200px) {
+  #modal-inscrever-filme.modal {
+    height: 80%;
+    max-height: 80%;
   }
+}
 </style>
