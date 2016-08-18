@@ -1,21 +1,39 @@
-<div class="filme card col s12">
-  <div class="avatar">
-   <div class="avatar-image col s4">
-    <img src="{{filme.usuario.avatar}}" alt="" class="circle"> <!-- notice the "circle" class -->
-  </div>
-  <div class="avatar-name col s8">
-    <span class="black-text">
-      {{filme.usuario.nome}}    
-    </span>
+<div class="row line-movie">
+  <div class="filme col s12">
+    <div class="avatar">
+      <div class="avatar-image">
+        <img src="{{filme.usuario.avatar}}" alt="" class="circle"> <!-- notice the "circle" class -->
+      </div>
+      <div class="avatar-name valign-wrapper">
+        <span class="black-text">
+          {{filme.usuario.nome}}    
+        </span>
+      </div>
+    </div>
+
+    <div class="filme-capa card-image">
+      <img src="media/images/romeu.jpg">
+      <span class="movie-title card-title">{{filme.titulo}}</span>
+
+      <div class="card-content">
+        <p class="valign-wrapper">{{filme.sinopse}}</p>
+      </div>
     </div>
   </div>
-
-  <div class="filme-capa card-image">
-    <img src="http://cssdeck.com/uploads/media/items/2/2v3VhAp.png">
-    <span class="card-title">{{filme.titulo}}</span>
-  </div>
-  <div class="card-content">
-    <p>{{filme.sinopse}}</p>
-  </div>
-
 </div>
+
+<style>
+  .filme-capa {
+    position: relative;
+  }
+
+  .movie-title {
+    position: absolute;
+    left: 10px;
+    bottom: 50px;
+    color: #fff;
+    font-size: 20px;
+  }
+
+</style>
+

@@ -3,7 +3,15 @@
 		
 		$scope.tentouInscreverFilme = false;
 		$scope.carregandoVideo = false;
-		$scope.filmes = [];
+		$scope.filmes = [{
+			titulo: "Romeu Most Die",
+			sinopse: "Romeu Most Die, asdiughiusadhgiuhasdighiasuhfgiuasdfhiguhasihgiuahfdsiguhaisdfughiuashdgiuhafsiughfiaudghiua", 
+			thumbnail: "media/images/avatar.png",
+			usuario: {
+				nome: "Cristiano de Souza",
+				avatar: "media/images/avatar.png"
+			}
+		}];
 
 		$scope.exibePreVisualizacao = function () {
 			$(".modal-content").animate({scrollTop: $(".modal-content").height()+ 100}, 1000);
