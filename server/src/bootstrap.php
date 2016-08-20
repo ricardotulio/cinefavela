@@ -1,6 +1,9 @@
 <?php
 define('APPLICATION_ENVIRONMENT', 'testing');
 
+header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Headers: Accept, Content-Type, Authorization, Pragma');
+
 if (defined('APPLICATION_ENVIRONMENT')) {
     switch (APPLICATION_ENVIRONMENT) {
         case 'development':

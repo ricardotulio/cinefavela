@@ -1,9 +1,35 @@
 (function() {
-	var FilmesController = function($rootScope, $scope) {
-		
+	var FilmesController = function($rootScope, $scope, $routeParams) {
 		$scope.tentouInscreverFilme = false;
 		$scope.carregandoVideo = false;
 		$scope.filmes = [{
+			titulo: "Romeu Most Die",
+			sinopse: "asdiughiusadhgiuhasdighiasuhfgiuasdfhiguhasihgiuahfdsiguhaisdfughiuashdgiuhafsiughfiaudghiua", 
+			thumbnail: "media/images/avatar.png",
+			usuario: {
+				nome: "Cristiano de Souza",
+				avatar: "media/images/avatar.png"
+			}
+		},
+		{
+			titulo: "Romeu Most Die",
+			sinopse: "Romeu Most Die, asdiughiusadhgiuhasdighiasuhfgiuasdfhiguhasihgiuahfdsiguhaisdfughiuashdgiuhafsiughfiaudghiua", 
+			thumbnail: "media/images/avatar.png",
+			usuario: {
+				nome: "Cristiano de Souza",
+				avatar: "media/images/avatar.png"
+			}
+		},
+		{
+			titulo: "Romeu Most Die",
+			sinopse: "Romeu Most Die, asdiughiusadhgiuhasdighiasuhfgiuasdfhiguhasihgiuahfdsiguhaisdfughiuashdgiuhafsiughfiaudghiua", 
+			thumbnail: "media/images/avatar.png",
+			usuario: {
+				nome: "Cristiano de Souza",
+				avatar: "media/images/avatar.png"
+			}
+		},
+		{
 			titulo: "Romeu Most Die",
 			sinopse: "Romeu Most Die, asdiughiusadhgiuhasdighiasuhfgiuasdfhiguhasihgiuahfdsiguhaisdfughiuashdgiuhafsiughfiaudghiua", 
 			thumbnail: "media/images/avatar.png",
@@ -45,6 +71,10 @@
 			$("#modal-login").openModal();
 		}
 
+		$scope.abrirFormularioCadastro = function() {
+			$("#modal-cadastro").openModal();
+		}
+
 		$scope.login = function() {
 			var tokenAcesso = localStorage.setItem("token_acesso" , "userToker");
 
@@ -64,8 +94,8 @@
 		}
 
 		$scope.cadastrarSe = function() {
-			$('#modal-login').closeModal();
-			$('#modal-sign-in').openModal();
+			$scope.abrirFormularioCadastro();
+			$('#modal-cadastro').openModal();
 		}
 
 		$scope.inscreverFilme = function (filme) {
@@ -90,9 +120,13 @@
 			}
 		}
 
+		if($routeParams.cadastrarSe == 1) {
+			$scope.abrirFormularioCadastro();
+		}
+
 	}
 
-	FilmesController.$inject = [ '$rootScope', '$scope' ];
+	FilmesController.$inject = [ '$rootScope', '$scope', '$routeParams' ];
 
 	angular.module('app').controller('FilmesController', FilmesController);
 })();

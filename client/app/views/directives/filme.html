@@ -1,44 +1,21 @@
-<div class="row line-movie">
-  <div class="filme col s12 m12">
-    <div class="avatar">
-      <div class="avatar-image">
-        <img src="{{filme.usuario.avatar}}" alt="" class="circle"> <!-- notice the "circle" class -->
-      </div>
-      <div class="avatar-name valign-wrapper">
-        <span class="black-text">
-          {{filme.usuario.nome}}    
-        </span>
-      </div>
+<div class="filme col s12 m12">
+  <div class="avatar">
+    <div class="avatar-image">
+      <img src="{{filme.usuario.avatar}}" alt="" class="circle"> <!-- notice the "circle" class -->
     </div>
-
-    <div class="filme-capa card-image">
-      <img src="media/images/romeu.jpg">
-      <span class="movie-title card-title">{{filme.titulo}}</span>
+    <div class="avatar-name valign-wrapper">
+      <span class="black-text">
+        {{filme.usuario.nome}}    
+      </span>
     </div>
-
-    <div class="card-content">
-        <p class="valign-wrapper">{{filme.sinopse}}</p>
-      </div>
   </div>
+
+  <div class="filme-capa card-image">
+    <img src="media/images/romeu.jpg">
+    <span class="filme-titulo card-title">{{filme.titulo}}</span>
+  </div>
+
+  <div class="card-content">
+      <p class="valign-wrapper">{{filme.sinopse}}</p>
+    </div>
 </div>
-
-<style>
-  .filme-capa {
-    position: relative;
-  }
-
-  .movie-title {
-    position: absolute;
-    left: 10px;
-    bottom: 50px;
-    color: #fff;
-    font-size: 20px;
-  }
-
-  .card-content {
-    margin-top: 1px solid;
-    word-break: break-word;
-  }
-
-</style>
-

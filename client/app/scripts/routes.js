@@ -4,7 +4,7 @@
       templateUrl: 'views/home.html',
       controller: 'HomeController'
     })
-    .when('/filmes', {
+    .when('/festival', {
       templateUrl: 'views/filmes.html',
       controller: 'FilmesController'
     });

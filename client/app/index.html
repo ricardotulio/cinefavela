@@ -11,30 +11,15 @@
   <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css">
   <link rel="stylesheet" href="bower_components/76d-social-icons/assets/css/social-icons.css">
   <link rel="stylesheet" href="styles/main.css">
-  <link rel="stylesheet" href="../styles/pin.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 <body>
-
-  <div class="navbar-fixed">
-    <nav>
-      <div class="nav-wrapper grey lighten-1">
-        <ul class="right hide-on-med-and-down">
-          <li ng-hide="usuario"><a href="javascript:void(0)" ng-click="logout()">Sair</a></li>
-          <li ng-show="usuario"><a href="javascript:void(0)">{{usuario.nome}}</a></li>
-        </ul>
-      </div>
-  
-  </div>
-
   <div class="container-fluid main">
-    <div class="content">
-      <ng-view></ng-view>      
-    </div>
+    <ng-view></ng-view>      
   </div>
 
-  <footer class="footer grey lighten-1 row">
+  <footer class="footer amber accent-3 row">
     <div class="col s12 m8 offset-m2 l6 offset-l3">
       <div class="social-network">
         <div class="social-network-item social-network-youtube">
@@ -51,7 +36,7 @@
         </div>
       </div>
       <div class="row">
-        <p class="center-align white-text">
+        <p class="center-align">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut at imperdiet arcu. Curabitur maximus ipsum sollicitudin lectus
           dignissim, ultrices mattis dui pretium. Praesent a commodo erat, vitae placerat magna. Vivamus lacinia nec diam
           et maximus.
@@ -59,18 +44,41 @@
       </div>
     </div>
   </footer>
+  <div class="copyright row amber accent-4 valign-wrapper">
+    <div class="container">
+      Todos os direitos reservados
+    </div>
+  </div>
   <script src="bower_components/angular/angular.min.js"></script>
   <script src="bower_components/angular-route/angular-route.min.js"></script>
+  <script src="bower_components/angular-resource/angular-resource.min.js"></script>
 
   <script src="scripts/main.js"></script>
+  <script src="scripts/models/usuario.js"></script>
+  <script src="scripts/models/autenticacao.js"></script>
   <script src="scripts/directives/filme.js"></script>
   <script src="scripts/controllers/home.js"></script>
   <script src="scripts/controllers/filmes.js"></script>
+  <script src="scripts/controllers/cadastro.js"></script>
+  <script src="scripts/controllers/autenticacao.js"></script>
   <script src="scripts/routes.js"></script>
 
   <script src="bower_components/jquery/dist/jquery.js"></script>
   <script src="bower_components/materialize/bin/materialize.js"></script>
+  <script>
+    $(document).ready(function(){
+       $('.parallax').parallax();
 
+       $('nav a').click(function(event) {
+          $('body').animate(
+            {
+              scrollTop: $($(this).data('href')).offset().top
+            }, 600);
+
+          return event.preventDefault();
+       });
+    });
+  </script>  
 </body>
 
 </html>

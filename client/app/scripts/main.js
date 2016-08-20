@@ -11,7 +11,7 @@
   
   config.$inject = [ "$sceDelegateProvider" ];
 
-  angular.module('app', ['ngRoute'])
+  angular.module('app', ['ngRoute', 'ngResource'])
     .config(config);
 
   angular.element(document).ready(function () {
