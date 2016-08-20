@@ -49,7 +49,6 @@
       </div>
     </div>
 
-
     <div class="row">
       <div class="input-field col s12">
         <input placeholder="Cole aqui o link do seu vídeo no YouTube" ng-model="filme.video_url" ng-change="exibePreVisualizacao()" id="video_url" type="text"
@@ -115,16 +114,16 @@
       <label for="remember-me">Lembre - me </label>
     </div>
   </div>
-  <div class="row">
+  <div class="row login-row">
     <div class="input-field col s12">
       <a href="javascript:void(0)" class="btn-login btn waves-effect waves-light col s12" ng-click="login()">Login</a>
     </div>
   </div>
   <div class="row">
-    <div class="input-field col s6 m6 l6">
+    <div class="input-field col s5 m6 l6">
       <p class="margin medium-small"><a href="javascript:void(0)" ng-click="cadastrarSe()">Cadastrar-se</a></p>
     </div>
-    <div class="input-field col s6 m6 l6">
+    <div class="input-field col s7 m6 l6">
       <p class="margin right-align medium-small"><a href="page-forgot-password.html">Esqueceu a Senha ?</a></p>
     </div>          
   </div>
@@ -259,8 +258,8 @@
   #modal-login.modal {
     height: 85% !important;
     max-height: 85% !important;
+    width: 90%;
   }
-
 
   #modal-inscrever-filme.modal {
     height: 80%;
@@ -271,40 +270,9 @@
     padding: .5em .5em !important;
   }
 
-  .login-form {
-    padding: 1em;
-  }
-
   #wrapper {
     width: 90%;
     margin: 50px auto;
-  }
-
-  .filmes {
-    -webkit-column-count: 1;
-    -webkit-column-gap: 10px;
-    -webkit-column-fill: auto;
-    -moz-column-count: 1;
-    -moz-column-gap: 10px;
-    -moz-column-fill: auto;
-    column-count: 3;
-    column-gap: 15px;
-    column-fill: auto;
-  }
-
-  .filme {
-    display: inline-block;
-    background: #FEFEFE;
-    -webkit-column-break-inside: avoid;
-    -moz-column-break-inside: avoid;
-    column-break-inside: avoid;
-    background: -webkit-linear-gradient(45deg, #FFF, #F9F9F9);
-    opacity: 1;
-    -webkit-transition: all .2s ease;
-    -moz-transition: all .2s ease;
-    -o-transition: all .2s ease;
-    transition: all .2s ease;
-    column: 1;
   }
 
   .card-avatar {

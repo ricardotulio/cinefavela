@@ -1,5 +1,5 @@
 <div class="row line-movie">
-  <div class="filme col s12">
+  <div class="filme col s12 m12">
     <div class="avatar">
       <div class="avatar-image">
         <img src="{{filme.usuario.avatar}}" alt="" class="circle"> <!-- notice the "circle" class -->
@@ -14,11 +14,11 @@
     <div class="filme-capa card-image">
       <img src="media/images/romeu.jpg">
       <span class="movie-title card-title">{{filme.titulo}}</span>
+    </div>
 
-      <div class="card-content">
+    <div class="card-content">
         <p class="valign-wrapper">{{filme.sinopse}}</p>
       </div>
-    </div>
   </div>
 </div>
 
@@ -33,6 +33,11 @@
     bottom: 50px;
     color: #fff;
     font-size: 20px;
+  }
+
+  .card-content {
+    margin-top: 1px solid;
+    word-break: break-word;
   }
 
 </style>
