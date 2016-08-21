@@ -31,7 +31,6 @@ class ComposerStaticInitcb43f8772246c6b5ee4e49858834ece1
             'Symfony\\Component\\Serializer\\' => 29,
             'Symfony\\Component\\PropertyAccess\\' => 33,
             'Symfony\\Component\\Inflector\\' => 28,
-            'Symfony\\Component\\EventDispatcher\\' => 34,
         ),
         'R' => 
         array (
@@ -93,19 +92,15 @@ class ComposerStaticInitcb43f8772246c6b5ee4e49858834ece1
         array (
             0 => __DIR__ . '/..' . '/symfony/inflector',
         ),
-        'Symfony\\Component\\EventDispatcher\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/symfony/event-dispatcher',
-        ),
         'Respect\\Validation\\' => 
         array (
             0 => __DIR__ . '/..' . '/respect/validation/library',
         ),
         'Respect\\' => 
         array (
-            0 => __DIR__ . '/..' . '/respect/config/library/Respect',
+            0 => __DIR__ . '/..' . '/respect/rest/library/Respect',
             1 => __DIR__ . '/..' . '/respect/relational/library/Respect',
-            2 => __DIR__ . '/..' . '/respect/rest/library/Respect',
+            2 => __DIR__ . '/..' . '/respect/config/library/Respect',
         ),
         'Psr\\Http\\Message\\' => 
         array (
@@ -163,25 +158,6 @@ class ComposerStaticInitcb43f8772246c6b5ee4e49858834ece1
             'Prophecy\\' => 
             array (
                 0 => __DIR__ . '/..' . '/phpspec/prophecy/src',
-            ),
-        ),
-        'G' => 
-        array (
-            'Guzzle\\Stream' => 
-            array (
-                0 => __DIR__ . '/..' . '/guzzle/stream',
-            ),
-            'Guzzle\\Parser' => 
-            array (
-                0 => __DIR__ . '/..' . '/guzzle/parser',
-            ),
-            'Guzzle\\Http' => 
-            array (
-                0 => __DIR__ . '/..' . '/guzzle/http',
-            ),
-            'Guzzle\\Common' => 
-            array (
-                0 => __DIR__ . '/..' . '/guzzle/common',
             ),
         ),
         'D' => 

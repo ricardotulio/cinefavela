@@ -1,60 +1,25 @@
 (function() {
-	var FilmesController = function($rootScope, $scope, $routeParams) {
+	var FilmesController = function($rootScope, $scope, $routeParams, Filme) {
+		$rootScope.usuarioLogado = localStorage.getItem('token_acesso') != undefined;
+
 		$scope.tentouInscreverFilme = false;
 		$scope.carregandoVideo = false;
-		$scope.filmes = [{
-			titulo: "Romeu Most Die",
-			sinopse: "asdiughiusadhgiuhasdighiasuhfgiuasdfhiguhasihgiuahfdsiguhaisdfughiuashdgiuhafsiughfiaudghiua", 
-			thumbnail: "media/images/avatar.png",
-			usuario: {
-				nome: "Cristiano de Souza",
-				avatar: "media/images/avatar.png"
-			}
-		},
-		{
-			titulo: "Romeu Most Die",
-			sinopse: "Romeu Most Die, asdiughiusadhgiuhasdighiasuhfgiuasdfhiguhasihgiuahfdsiguhaisdfughiuashdgiuhafsiughfiaudghiua", 
-			thumbnail: "media/images/avatar.png",
-			usuario: {
-				nome: "Cristiano de Souza",
-				avatar: "media/images/avatar.png"
-			}
-		},
-		{
-			titulo: "Romeu Most Die",
-			sinopse: "Romeu Most Die, asdiughiusadhgiuhasdighiasuhfgiuasdfhiguhasihgiuahfdsiguhaisdfughiuashdgiuhafsiughfiaudghiua", 
-			thumbnail: "media/images/avatar.png",
-			usuario: {
-				nome: "Cristiano de Souza",
-				avatar: "media/images/avatar.png"
-			}
-		},
-		{
-			titulo: "Romeu Most Die",
-			sinopse: "Romeu Most Die, asdiughiusadhgiuhasdighiasuhfgiuasdfhiguhasihgiuahfdsiguhaisdfughiuashdgiuhafsiughfiaudghiua", 
-			thumbnail: "media/images/avatar.png",
-			usuario: {
-				nome: "Cristiano de Souza",
-				avatar: "media/images/avatar.png"
-			}
-		}];
+		$rootScope.filmes = [];
 
-		$scope.exibePreVisualizacao = function () {
-			$(".modal-content").animate({scrollTop: $(".modal-content").height()+ 100}, 1000);
+		$scope.generos = [];
+		
+		$scope.generos[1] = "Ação";
+		$scope.generos[2] = "Aventura";
+		$scope.generos[3] = "Comédia";
+		$scope.generos[4] = "Documentário";
+		$scope.generos[5] = "Drama";
+		$scope.generos[6] = "Suspense";
+		$scope.generos[7] = "Terror";
+		$scope.generos[1000] = "Outro";
 
-			$scope.carregandoVideo = true;
-			$scope.exibirVideo = false;
-
-			$scope.obtemIdVideoYouTube($scope.filme.video_url, function (id) {
-				$scope.filme.video_url = "https://www.youtube.com/embed/" + id;
-				$scope.carregandoVideo = false;
-				$scope.exibirVideo = true;
-
-				setTimeout(function() {
-					$(".modal-content").animate({scrollTop: $(".modal-content").height() + 500}, 1000);
-				}, 1500)
-			});
-		}
+		Filme.get(function(response) {
+			$rootScope.filmes = response.data;
+		});
 
 		$scope.abrirFormularioInscricao = function() {
 			var tokenAcesso = localStorage.getItem("token_acesso");
@@ -62,7 +27,7 @@
 			if(tokenAcesso == null) {
 				$scope.tentouInscreverFilme = true;
 				$scope.abrirFormularioLogin();
-			}else {
+			} else {
 				$("#modal-inscrever-filme").openModal();
 			}
 		}
@@ -75,58 +40,27 @@
 			$("#modal-cadastro").openModal();
 		}
 
-		$scope.login = function() {
-			var tokenAcesso = localStorage.setItem("token_acesso" , "userToker");
-
-			$rootScope.usuario = {
-				nome: "ricardo"
-			};
-
-			if($scope.tentouInscreverFilme) {
-				$('#modal-login').closeModal();
-				$scope.abrirFormularioInscricao();
-			}
-		}
-
-		$rootScope.logout = function() {
-			var tokenAcesso = localStorage.removeItem("token_acesso");
-			location.reload();
-		}
-
 		$scope.cadastrarSe = function() {
 			$scope.abrirFormularioCadastro();
 			$('#modal-cadastro').openModal();
 		}
 
-		$scope.inscreverFilme = function (filme) {
-			$scope.obtemIdVideoYouTube(filme.video_url, function (id) {
-				filme.capa = "https://i.ytimg.com/vi/" + id + "/hqdefault.jpg";
-				filme.usuario = {
-					nome: "Ricardão",
-					avatar: "media/images/avatar.png"
-				};
-				$scope.filmes.push(angular.copy(filme));
-				$scope.filme = {};
-			});
+		$scope.fechaAssistirFilme = function() {
+			$("#assistir-filme").attr('src', '');
+			$('#modal-watch-video').closeModal();	
 		}
 
-		$scope.obtemIdVideoYouTube = function (videoUrl, callback, errorback) {
-			var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#\&\?]*).*/;
-			var match = videoUrl.match(regExp);
-			if (match && match[7].length == 11) {
-				callback(match[7]);
-			} else {
-				errorback(null);
-			}
-		}
-
-		if($routeParams.cadastrarSe == 1) {
+		if($routeParams.cadastrarSe == 1 && localStorage.getItem('token_acesso') == undefined) {
 			$scope.abrirFormularioCadastro();
 		}
 
+		$scope.logout = function() {
+			var tokenAcesso = localStorage.removeItem("token_acesso");
+			location.reload();
+		}
 	}
 
-	FilmesController.$inject = [ '$rootScope', '$scope', '$routeParams' ];
+	FilmesController.$inject = [ '$rootScope', '$scope', '$routeParams', 'Filme' ];
 
 	angular.module('app').controller('FilmesController', FilmesController);
 })();

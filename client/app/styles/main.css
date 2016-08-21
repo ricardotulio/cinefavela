@@ -8,7 +8,7 @@ figure {
 
 .social-network {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .container-fluid { 
@@ -74,3 +74,25 @@ padding-right: 0px !important;
 .copyright {
 	height: 50px;
 }	
+
+@media only screen and (max-width: 992px) {
+	.modal {
+	    width: 90%;
+	}
+}
+
+.modal-content.loading {
+	display: none;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.ng-touched.ng-invalid {
+	border-bottom: 1px solid #F44336 !important;
+    box-shadow: 0 1px 0 0 #F44336 !important;
+}
+
+form small {
+	margin-top: -1em;
+}

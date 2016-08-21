@@ -23,8 +23,23 @@ CREATE TABLE IF NOT EXISTS filme (
 	titulo VARCHAR(120) NOT NULL,
 	sinopse TEXT NOT NULL,
 	linkYoutube VARCHAR(1024) NOT NULL,
+	capa VARCHAR(1024) NOT NULL,
 	criadoEm DATETIME NOT NULL,
 	atualizadoEm DATETIME DEFAULT NULL,
 	PRIMARY KEY (id),
 	FOREIGN KEY (usuario_id) REFERENCES usuario (id)
+);
+
+CREATE TABLE IF NOT EXISTS genero (
+	id INTEGER NOT NULL auto_increment,
+	titulo VARCHAR(30) NOT NULL,
+	PRIMARY KEY (id)
+);
+
+CREATE TABLE IF NOT EXISTS filme_genero (
+	filme_id INTEGER NOT NULL,
+	genero_id INTEGER NOT NULL,
+	PRIMARY KEY (filme_id, genero_id),
+	FOREIGN KEY (filme_id) REFERENCES filme (id),
+	FOREIGN KEY (genero_id) REFERENCES genero (id)
 );

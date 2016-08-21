@@ -6,6 +6,7 @@ use CineFavela\Validation\ValidatorInterface;
 use Respect\Rest\Routable;
 use CineFavela\Model\Filme;
 use CineFavela\Repository\SessaoRepository;
+use CineFavela\Repository\GeneroRepository;
 
 class FilmeController extends AbstractController implements Routable
 {
@@ -16,11 +17,14 @@ class FilmeController extends AbstractController implements Routable
 
     private $filmeRepository;
 
-    public function __construct(ValidatorInterface $validator, SessaoRepository $sessaoRepository, FilmeRepository $filmeRepository)
+    private $generoRepository;
+
+    public function __construct(ValidatorInterface $validator, SessaoRepository $sessaoRepository, FilmeRepository $filmeRepository, GeneroRepository $generoRepository)
     {
         $this->validator = $validator;
         $this->sessaoRepository = $sessaoRepository;
         $this->filmeRepository = $filmeRepository;
+        $this->generoRepository = $generoRepository;
     }
 
     public function get($id = null)
@@ -47,7 +51,7 @@ class FilmeController extends AbstractController implements Routable
     {
         $input = $this->request->input;
         $sessao = $this->sessaoRepository->get($this->request->headers["Authorization"]);
-        
+
         if (! $sessao) {
             header("HTTP/1.1 401 Unauthorized");
             return array(
@@ -77,11 +81,13 @@ class FilmeController extends AbstractController implements Routable
         $filme->setTitulo($input->titulo);
         $filme->setSinopse($input->sinopse);
         $filme->setLinkYoutube($input->linkYoutube);
+        $filme->setCapa($input->capa);
+        $filme->setGeneros($input->generos);
         
         $this->filmeRepository->persist($filme);
         
         return array(
-            "data" => $filme
+            "data" => $this->filmeRepository->get($filme->getId())
         );
     }
 }

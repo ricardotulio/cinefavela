@@ -15,60 +15,30 @@
 </head>
 
 <body>
-  <div class="container-fluid main">
-    <ng-view></ng-view>      
-  </div>
-
-  <footer class="footer amber accent-3 row">
-    <div class="col s12 m8 offset-m2 l6 offset-l3">
-      <div class="social-network">
-        <div class="social-network-item social-network-youtube">
-          <a href="http://www.youtube.com" target="_blank" title="YouTube" class="si-circle si-large si-colored si-youtube"></a>
-        </div>
-        <div class="social-network-item social-network-facebook">
-          <a href="http://www.facebook.com" target="_blank" title="Facebook" class="si-circle si-large si-colored si-facebook"></a>
-        </div>
-        <div class="social-network-item social-network-twitter">
-          <a href="http://www.twitter.com" target="_blank" title="Twitter" class="si-circle si-large si-colored si-twitter"></a>
-        </div>
-        <div class="social-network-item social-network-instagram">
-          <a href="http://www.instagram.com" target="_blank" title="Instagram" class="si-circle si-large si-colored si-instagram"></a>
-        </div>
-      </div>
-      <div class="row">
-        <p class="center-align">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut at imperdiet arcu. Curabitur maximus ipsum sollicitudin lectus
-          dignissim, ultrices mattis dui pretium. Praesent a commodo erat, vitae placerat magna. Vivamus lacinia nec diam
-          et maximus.
-        </p>
-      </div>
-    </div>
-  </footer>
-  <div class="copyright row amber accent-4 valign-wrapper">
-    <div class="container">
-      Todos os direitos reservados
-    </div>
-  </div>
+  <ng-view></ng-view>
+  
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/materialize/bin/materialize.js"></script>
+  
   <script src="bower_components/angular/angular.min.js"></script>
   <script src="bower_components/angular-route/angular-route.min.js"></script>
   <script src="bower_components/angular-resource/angular-resource.min.js"></script>
+  <script src="bower_components/angular-password/angular-password.min.js"></script>
+  <script src="bower_components/angular-materialize/src/angular-materialize.js"></script>
 
   <script src="scripts/main.js"></script>
   <script src="scripts/models/usuario.js"></script>
   <script src="scripts/models/autenticacao.js"></script>
+  <script src="scripts/models/filme.js"></script>
   <script src="scripts/directives/filme.js"></script>
   <script src="scripts/controllers/home.js"></script>
   <script src="scripts/controllers/filmes.js"></script>
-  <script src="scripts/controllers/cadastro.js"></script>
+  <script src="scripts/controllers/cadastrarusuario.js"></script>
+  <script src="scripts/controllers/inscreverfilme.js"></script>
   <script src="scripts/controllers/autenticacao.js"></script>
   <script src="scripts/routes.js"></script>
-
-  <script src="bower_components/jquery/dist/jquery.js"></script>
-  <script src="bower_components/materialize/bin/materialize.js"></script>
   <script>
-    $(document).ready(function(){
-       $('.parallax').parallax();
-
+    $(document).ready(function() {
        $('nav a').click(function(event) {
           $('body').animate(
             {

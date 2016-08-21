@@ -2,9 +2,10 @@
     "name": "cinefavela/api",
     "type": "project",
     "license": "GPL 3.0",
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "require": {
-        "respect/rest": "^0.6.0",
+        "respect/rest": "dev-master",
         "respect/relational": "^0.8.1",
         "respect/validation": "^1.1",
         "respect/config": "^2.0",

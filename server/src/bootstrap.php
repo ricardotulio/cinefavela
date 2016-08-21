@@ -78,10 +78,18 @@ $router->post("/v1/autenticacao", "CineFavela\\Controller\\AutenticacaoControlle
     $container->sessaoRepository
 ));
 
-$router->any("/v1/filmes/*", "CineFavela\\Controller\\FilmeController", array(
+$router->post("/v1/filmes/*", "CineFavela\\Controller\\FilmeController", array(
     $container->filmeValidator,
     $container->sessaoRepository,
-    $container->filmeRepository
+    $container->filmeRepository,
+    $container->generoRepository
 ))->by($rotinaAutorizacao);
+
+$router->get("/v1/filmes/*", "CineFavela\\Controller\\FilmeController", array(
+    $container->filmeValidator,
+    $container->sessaoRepository,
+    $container->filmeRepository,
+    $container->generoRepository
+));
 
 echo $router->run();

@@ -58,8 +58,6 @@ body {
 	-webkit-column-break-inside: avoid;
 	-moz-column-break-inside: avoid;
 	column-break-inside: avoid;
-	padding: 15px;
-	padding-bottom: 5px;
 	background: -webkit-linear-gradient(45deg, #FFF, #F9F9F9);
 	opacity: 1;
 	
@@ -78,6 +76,11 @@ body {
 	font: 12px/18px Arial, sans-serif;
 	color: #333;
 	margin: 0;
+}
+
+.filme-sinopse {
+  padding: .5em;
+  padding-top: 0px;
 }
 
 #columns:hover .pin:not(:hover) {
@@ -106,13 +109,14 @@ body {
   right: 0;
   background-color: #fafafa;
   padding: 0;
-  max-height: 80% !important;
-  width: 90% !important;
+  max-height: 90% !important;
+  width: 75% !important;
   margin: auto;
   overflow-y: auto;
   border-radius: 2px;
   will-change: top, opacity;
   overflow-y: hidden;
+  top: 5% !important;
 }
 
 .video-container {
@@ -208,9 +212,9 @@ figure img {
 
 @media (min-width: 1170px) {
   #columns {
-    -webkit-column-count: 4;
-    -moz-column-count: 4;
-    column-count: 4;
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+    column-count: 3;
   }
 }
 
@@ -236,4 +240,16 @@ position: relative;
 .card-content {
 	margin-top: 1px solid;
 word-break: break-word;
+}
+
+#modal-assistir-filme .modal-content {
+  position: relative;
+  height: 0px;
+  padding-top: 55.6%;
+}
+
+#modal-assistir-filme iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
 }

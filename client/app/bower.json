@@ -18,6 +18,8 @@
     "font-awesome": "~4.6.3",
     "materialize": "~0.97.7",
     "76d-social-icons": "~1.0.4",
-    "angular-resource": "^1.5.8"
+    "angular-resource": "^1.5.8",
+    "angular-password": "~1.0.1",
+    "angular-materialize": "~0.1.9"
   }
 }

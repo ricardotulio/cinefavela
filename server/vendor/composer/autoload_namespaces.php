@@ -8,10 +8,6 @@ $baseDir = dirname($vendorDir);
 return array(
     'Respect\\Data' => array($vendorDir . '/respect/data/library'),
     'Prophecy\\' => array($vendorDir . '/phpspec/prophecy/src'),
-    'Guzzle\\Stream' => array($vendorDir . '/guzzle/stream'),
-    'Guzzle\\Parser' => array($vendorDir . '/guzzle/parser'),
-    'Guzzle\\Http' => array($vendorDir . '/guzzle/http'),
-    'Guzzle\\Common' => array($vendorDir . '/guzzle/common'),
     'Doctrine\\Common\\Lexer\\' => array($vendorDir . '/doctrine/lexer/lib'),
     'Doctrine\\Common\\Annotations\\' => array($vendorDir . '/doctrine/annotations/lib'),
     'Dissect' => array($vendorDir . '/jakubledl/dissect/src'),

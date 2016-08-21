@@ -1,4 +1,5 @@
-    <link rel="stylesheet" ng-href="/styles/home.css">
+<link rel="stylesheet" href="/styles/home.css">
+<div class="container-fluid main">
     <div id="home" class="navbar-fixed">
       <nav  class="amber accent-3">
         <div class="nav-wrapper container">
@@ -12,19 +13,19 @@
           </ul>
         </div>
     </div>    
-    <div class="parallax-container white-text center-align">
-      <div class="row container home-descricao">
-        <div class="col s12">
-          <h1>Festival Cine Favela</h1>
-          <h2>Chamada para o Festival</h2>
+    <div class="parallax-container white-text">
+      <div class="row container home-descricao" style="text-shadow: 0.1em 0.1em 0.05em #333;">
+        <div class="col s6">
+          <h1>Festival Cine Favela de Curta Metragem</h1>
+          <h5>Estão abertas as inscrições para o 11º Festival Cine Favela de Curta Metragem! Faça a sua inscrição e participe!</h5>
         </div>
       </div>
-      <div class="row container home-botoes">
-        <div class="col s12 valign-wrapper center-align">
+      <div class="row container home-botoes valign-wrapper left-align">
+        <div class="col s12">
           <a class="waves-effect waves-light btn" ng-href="#/festival?cadastrarSe=1" target="_blank">Inscrever-se</a>
         </div>
       </div>
-      <div class="parallax"><img ng-src="/media/images/home.jpg"></div>
+      <div parallax><img class="responsive-img" ng-src="/media/images/Encerramento_Festival292.jpg"></div>
     </div>
     <section class="section white">
       <div class="destaques row container">
@@ -55,8 +56,8 @@
     <section id="historia" class="section white">
       <div class="row container">
         <div class="col m6 hide-on-small-only">
-          <figure>
-            <img class="responsive-img" ng-src="/media/images/campinho.jpg">
+          <figure style="position: relative; width: 100%; height: 0px; padding-bottom: 56.8%">
+            <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" width="100%" height="100%" frameborder="0" src="//videos.abril.com.br/veja/id/5ac893bc5c9d5aef4d60a1d394e15fec" allowfullscreen=""></iframe>
           </figure>
         </div>
         <div class="col m6">
@@ -65,8 +66,8 @@
             de inclusão sociocultural para moradores da Comunidade de Heliópolis.</p>
         </div>
         <div class="col s12 hide-on-med-and-up">
-          <figure>
-            <img class="responsive-img" ng-src="/media/images/campinho.jpg">
+          <figure style="position: relative; width: 100%; height: 0px; padding-bottom: 60%">
+            <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" width="100%" height="100%" frameborder="0" src="//videos.abril.com.br/veja/id/5ac893bc5c9d5aef4d60a1d394e15fec" allowfullscreen=""></iframe>
           </figure>
         </div>        
       </div>
@@ -89,7 +90,7 @@
       </div>
     </section>    
     <div class="parallax-container">
-      <div class="parallax"><img ng-src="/media/images/home.jpg"></div>
+      <div parallax><img ng-src="/media/images/home.jpg"></div>
     </div>
     <section id="membros" class="membros hide section white">
       <div class="row container valign-wrapper">
@@ -161,7 +162,7 @@
     <div class="row container valign-wrapper">
       <div class="col s12 center-align">
         <h2>Faça sua doação!</h2>
-        <p class="flow-text">Você pode ajudar a manter o Cine Favela doando 10, 20 ou 30 reais.</p>
+        <p class="flow-text">Você pode ajudar a manter o Cine Favela doando qualquer valor. Clique em doar e faça a sua contribução!</p>
         <a class="waves-effect waves-light btn">Doar</a>
       </div>
     </div>
@@ -174,7 +175,23 @@
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3655.686364329753!2d-46.59162138533616!3d-23.615578569481166!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5c839960836f%3A0xfc1d64fdc2527cb!2sR.+do+Pacificador+-+Cidade+Nova+Heli%C3%B3polis%2C+S%C3%A3o+Paulo+-+SP%2C+04235-025!5e0!3m2!1sen!2sbr!4v1471716711447" width="100%" height="600" frameborder="0" style="border:0" allowfullscreen></iframe>
       </div>
       <div class="col s12 m6 left-align">
-        <div class="row">
+        <div class="row loading hide" style="height: 250px; display: flex; justify-content: center; align-items: center;">
+        <div class="preloader-wrapper big active">
+          <div class="spinner-layer spinner-blue-only">
+            <div class="circle-clipper left">
+              <div class="circle"></div>
+            </div><div class="gap-patch">
+              <div class="circle"></div>
+            </div><div class="circle-clipper right">
+              <div class="circle"></div>
+            </div>
+          </div>
+        </div>
+        </div>
+        <div class="row mensagem-enviada hide" style="height: 250px; display: flex; justify-content: center; align-items: center;">
+        <p class='flow-text'>Mensagem enviada com sucesso!</p>
+        </div>        
+        <div class="row formulario">
           <form class="form col s12">
             <div class="input-field col s12">
               <input id="nome" type="text" class="validate">
@@ -189,7 +206,7 @@
               <label for="mensagem">Mensagem</label>
             </div>
             <div class="input-field col s12">
-              <a class="waves-effect waves-light btn right"><i class="material-icons left">navigation</i>Enviar</a>
+              <a class="waves-effect waves-light btn right" ng-click="enviarMensagem()"><i class="material-icons left">navigation</i>Enviar</a>
             </div>
           </form>
         </div>
@@ -205,3 +222,44 @@
       </div>      
     </div>
   </section>
+</div>
+
+
+  <footer class="footer amber accent-3 row">
+    <div class="col s12 m8 offset-m2 l6 offset-l3">
+      <div class="social-network">
+        <div class="social-network-item social-network-youtube">
+          <a href="https://www.youtube.com/user/Reginaldo9125" target="_blank" title="YouTube" class="si-circle si-large si-colored si-youtube"></a>
+        </div>
+        <div class="social-network-item social-network-facebook">
+          <a href="https://www.facebook.com/cinefavela.heliopolis/?fref=ts" target="_blank" title="Facebook" class="si-circle si-large si-colored si-facebook"></a>
+        </div>
+        <div class="hide social-network-item social-network-twitter">
+          <a href="http://www.twitter.com" target="_blank" title="Twitter" class="si-circle si-large si-colored si-twitter"></a>
+        </div>
+        <div class="hide social-network-item social-network-instagram">
+          <a href="http://www.instagram.com" target="_blank" title="Instagram" class="si-circle si-large si-colored si-instagram"></a>
+        </div>
+      </div>
+      <div class="row">
+        <p class="center-align">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut at imperdiet arcu. Curabitur maximus ipsum sollicitudin lectus
+          dignissim, ultrices mattis dui pretium. Praesent a commodo erat, vitae placerat magna. Vivamus lacinia nec diam
+          et maximus.
+        </p>
+      </div>
+    </div>
+  </footer>
+  <div class="copyright row amber accent-4 valign-wrapper">
+    <div class="container">
+      Todos os direitos reservados
+    </div>
+  </div>
+
+  <script>
+    $(document).ready(function() {
+      $('nav a').click(function() {
+        $('body').animate({scrollTop: $($(this).data('href')).offset().top }, 800);
+      });
+    })
+  </script>
